@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Get your short-term event permit!</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src='app.js' type="text/javascript"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzCsQTTBA7AbrjxE6R5vwnZkL0q7Ev48Q">
+    </script>
+    
+   		<!--[if lt IE 9]>
+		    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!--[if (lt IE 9)&(gt IE 6)&(!IEMobile)]>
+		<link rel="stylesheet" href="../style/css/layout.css" media="all">
+		<![endif]-->
+		
+		<!-- Link to a 32x32 favicon 
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		-->
+		
+		<!-- (Optional) Link to a 60x60 bookmark icon for iOS 
+		<link rel="apple-touch-icon-precomposed" href="../style/favicons/60x60/flag-red.png"/>
+		-->
+		
+	</head>
+	
+	<body>
+		
+		<header>
+			
+			<div>
+				<h2 class='bold'>Get your Short-Term Event Permit!</h2>
+				<p>Welcome to Miami-Dade County's short-term event permitting wizard.<br>Use this tool to help you get ready to apply for a short-term event permit (STEP): know who to call &amp; when!</p>
+			</div>
+			
+		</header>
+	
+		<div id='container'>
+			
+			<section id="public">
+				
+				<div class='row'>
+					<h2>Will your event be open to the general public?</h2>
+					<span class='button' id='public-yes'>Yes!</span> 
+					<span class='button' id='public-no'>No.</span>
+				</div>
+				
+			</section>
+			
+			<section id="ticket-sales" class='hidden'>
+				
+				<div class='row'>
+					<h2>Will you be selling tickets to your event?</h2>
+					<span class='button' id='tickets-yes'>Yes!</span> 
+					<span class='button' id='tickets-no'>No.</span>
+				</div>
+				
+			</section>
+			
+			<section id='address' class='hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='row'>We need to know where your event will be held.</h2>
+				
+				</div>
+				
+				<div class='row'>
+					
+					<div class='six columns question'>
+						
+						<div>
+							<h4>Do you know the address of where you’ll have the event?</h4>
+							<span class='button' id='address-yes'>Yes!</span> <!-- show AmIinMiami -->							<span class='button' id='address-no'>No.</span>
+						</div>
+							
+						<div class='hidden' id='umsa'>
+							
+							<h4>Is your event being held in unincorporated Miami-Dade County?</h4>										<span class='button' id='umsa-yes'>Yes!</span> <!-- hide not-in-umsa -->
+							<span class='button' id='umsa-no'>No.</span> <!-- show not-in-umsa -->
+							<span class='button' id='umsa-notSure'>I'm not sure.</span> <!-- Go where? -->
+							
+						</div>
+							
+						<div class='hidden' id='county-parks'>
+								
+							<h4>Is your event being held in a county park?</h4>
+							<span class='button' id='park-yes'>Yes.</span> <!-- show not-in-umsa -->
+							<span class='button' id='park-no'>No.</span> <!-- Go where? -->
+								
+						</div>
+						
+				</div>
+				
+					<div class='six columns answer'>
+					
+					<!-- address-search -->
+					<form id='address' class='hidden'>
+						
+						<h4>Please enter your address.</h4>
+						<input type='text' id='input-address' placeholder='818 NE 71 Street'></input>
+						<span class='button active' id='submit-address' type='submit'>Submit</span>
+					
+					</form>
+					
+					<div id='loader' class='hidden'></div>
+					
+					<div id='address-value' class='hidden'>
+						
+						<h4>You entered the address:</h4>
+						<span class='value'></span>
+						
+					</div>
+					
+					<div id='no-address' class='hidden'>
+						
+						<span class='response'></span>
+						
+					</div>
+					
+				</div>
+					
+				</div>
+				
+			</section>
+			
+			<section id='public-with-structures' class='row hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='bold'>Ok. Now, let's talk about whether your event will have temporary structures.</h2>
+				
+				</div>
+				
+				<div class='six columns question'>
+					
+					<div id='temp-structures'>
+						<h4>Will your event be open to the public, and use temporary structures?</h4>
+						
+						<span class='button' id='structure-yes'>Yes!</span> <!-- [SHOW SHORT-TERM, HIDE SPECIAL/UMSA-AND-SPECIAL] -->
+						<span class='button' id='structure-no'>No.</span> <!-- [SHOW SPECIAL/UMSA-AND-SPECIAL, HIDE UMSA-AND-SHORT-TERM] -->
+						<span class='button' id='structure-whatIs'>What's a "temporary structure?"</span> <!-- Go where? -->
+					</div>
+					
+					<div id='300-plus' class='hidden'>
+						<h4>Will you have a tent with a capacity for more than 300 people?</h4>
+						<span class='button' id='tent-yes'>Yes</span> <! -- SHOW B -->
+						<span class='button' id='tent-no'>No.</span> <!-- HIDE B -->
+					</div>
+						
+				</div>
+				
+				<div class='six columns answer'>
+					
+					<div id='public-yes' class='hidden module'>
+						
+						<p>Ok! We've verified that you <b>do</b> need a Short-Term Events Permit (STEP).</p>
+						
+						<p>You’ll need a Short-Term Events Permit if your event is open to the public and if your event has temporary structures, including tents (above a 10' x 12' threshold), bleachers, stages, specialty wiring, rides, lifts, and ramps, non-portable ventilation systems or enclosed cooking facilities.</p>
+					</div>
+						
+					<div id='tent-yes' class='hidden module'>
+						<p>All temporary structures (tents) that can hold more than 300 occupants require Miami-Dade Fire and Rescue’s Fire Watch (MDFR) present for the duration of the event. Fire Watch can be set up by calling MDFR Special Events at (786) 331-4438.</p>
+						
+					</div>
+						
+					<div id='tent-no' class='hidden module'>
+						<p>Great! Since you're not using a tent, at this point you don't need to talk to MDFR. Remember, though, you may need Fire and Rescue for other services.</p>
+					</div>
+					
+					<!-- <div id='public-no' class='hidden module'>
+						<p>As your event doesn’t require temporary structures, you can apply for a more general special events permit instead. [WIZARD END]</p> how? 
+					</div>-->
+					
+				</div>
+				
+			</section>
+			
+			<section id='temporary-structure-definition' class='hidden alert'>
+				
+				<h4>Temporary Structures</h4>
+				<p>A temporary structure is defined as x, y, z.</p>
+				
+			</section>
+			
+			<section id='certificate-of-use' class='row hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='row bold'>Do you already have a Certificate of Use (CU)?</h2>
+				
+				</div>
+				
+				<div class='six columns question'>
+					
+					<p>A Certificate of Use (formerly known as a Zoning Permit) is required and guarantees the business is allowed in the zoning district where it is located. There are three types of CUs: permanent, temporary and special.</p>
+						
+					<span class='button' id='cu-yes'>Yes!</span> <!-- [SHOW A] -->
+					<span class='button' id='cu-no'>No.</span> <!-- [HIDE A] -->
+					<span class='button' id='cu-notSure'>I'm not sure.</span> <!-- Go where? -->
+
+				</div>
+				
+				<div class='six columns answer'>
+					
+					<div id='cu-yes' class='hidden module'>
+						<p>Great! You're ready to move on.</p>
+					</div>
+					
+					<div id='cu-no' class='hidden module'>
+						<p>A Certificate of Use will be issued to you as part of the short-term event permitting process.</p>
+					</div>
+					
+					<div id='cu-notSure' class='hidden module'>
+						
+						<p>That's ok! If you have one, you're ahead of the game, and if not, a Certificate of Use will be issued to you as part of the permitting process.</p>
+						
+					</div>
+				</div>
+				
+			</section>
+			
+			<section id='street-closure' class='row hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='row bold'>Now, about the streets around your event...</h2>
+				
+				</div>
+				
+				<div class='six columns question'>
+					
+					<h4>Do you plan on closing a street?</h4>
+					<span class='button' id='street-yes'>Yes, a residential street.</span> <!-- [SHOW street-yes, HIDE D2/D3] -->
+					<span class='button' id='street-yesAgain'>Yes, a larger road, like a state road.</span> <!-- [SHOW D/D2/D3, HIDE D1] -->
+					<span class='button' id='street-no'>No, I'm not closing any streets or roads.</span> <!-- [HIDE D] -->
+
+				</div>
+				
+				<div class='six columns answer'>
+					
+					<div id='street-yes' class='hidden module'>
+						<p>You'll need to call Public Works. <!-- add contact info --></p>
+						
+						<p>If you would like to temporary close a residential street for non-commercial purposes, you can apply for a block party permit. Block party permits are issued for free but come with conditions: street closures are only allowed during the day, and tables, tents or structures are not permitted on the street. A block party does not require a STEP.</p>
+						
+						<p>If your event is for commercial purposes, you'll still need a Short-Term Event Permit. Please continue!</p>
+					</div>
+					
+					<div id='street-yesAgain' class='hidden module'>
+						<p>If a larger road closure is necessary, you’ll need to work with a licensed engineer to provide a Maintenance of Traffic (MOT) plan, and submit that to the Public Works department.
+	If you would like to close a state road, you’ll need to get a Special Events Permit from the Florida Department of Transportation (FDOT).</p>
+					</div>
+					
+					<div id='street-no' class='hidden module'>
+						<p>Great! Carry on.</p>
+					</div>
+					
+				</div>
+				
+			</section>
+			
+			<section id='special-types' class='row hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='row bold'>Let's talk about the type of event you're hosting.</h2>
+				
+				</div>
+				
+				<div class='six columns question'>
+					
+					<h4>Do any of the following apply to your event?</h4>
+							
+						<span class='button' id='type-sale'>I'm selling Christmas trees, pumpkins, or sparklers.</span> <!-- [SHOW B1, HIDE F/B2/B3] -->
+						<span class='button' id='type-carnival'>My event would be considered a carnival or a tent revival.</span> <!--  [SHOW B2, HIDE F/B1/B3] -->
+						<span class='button' id='type-assembly'>My event would be considered an assembly,<br> circus or sporting event.</span> <!-- [SHOW F/B3, HIDE B1/B2] -->
+						<span class='button' id='type-none'>None of these apply.</span> <!-- [SHOW F/B3, HIDE B1/B2] -->
+
+				</div>
+				
+				<div class='six columns answer'>
+					
+					<div id='type-sale' class='hidden module'>
+						<p>Have you examined the MDFR safety inspection checklist for selling Christmas trees or sparklers?</p>
+						
+					</div>
+					
+					<div id='type-carnival' class='hidden module'>
+						<p>Have you examined the MDFR safety inspection checklist for carnivals or tent revivals?</p>
+						
+						<p>You'll also need signed "waivers of objection" from nearby homeowners. If your event is deemed a tent revival or a carnival by the county - or this is your third short-term event on a single property within the span of 12 months - you’ll need the names, addresses, phone numbers and signatures of nearby homeowners. You’ll need the signatures of 100% of the homeowners 500 feet from the venue, or 80% of homeowners 1000 feet from the venue.</p>
+
+					</div>
+					
+					<div id='type-assembly' class='hidden module'>
+						<p>Have you examined the MDFR safety inspection checklist for carnivals or tent revivals?</p>
+						
+						<p>Signed "waivers of objection" from nearby homeowners.  If your event is deemed a tent revival or a carnival by the county - or this is your third short-term event on a single property within the span of 12 months - you’ll need the names, addresses, phone numbers and signatures of nearby homeowners. You’ll need the signatures of 100% of the homeowners 500 feet from the venue, or 80% of homeowners 1000 feet from the venue.</p>
+
+					</div>
+					
+					<div id='type-none' class='hidden module'>
+						
+						<p>Carry on!</p>
+					</div>
+					
+				</div>
+				
+			</section>
+			
+			<section id='health' class='row hidden'>
+				
+				<div class='row'>
+					
+					<h2 class='row bold'>Now let's talk about public health.</h2>
+				
+				</div>
+				
+				<div class='six columns question'>
+					
+					<h4>Do any of the following apply to your event?</h4>
+					<span class='button' id='health-restroom'>I will be providing portable restrooms.</span> <!-- [SHOW C] -->
+					<span class='button' id='health-tanks'>I will be providing portable OR stationary holding tanks.</span> <!--  [SHOW C] -->
+					<span class='button' id='health-foodtrucks'>My event will have food trucks present.</span> <!-- [SHOW C2/hide C1, C] -->
+					<span class='button' id='health-foodsales'>I will be selling food on the premises.</span> <!-- [SHOW C1] -->
+					<span class='button' id='health-none'>None of these apply.</span>
+							
+				</div>
+				
+				<div class='six columns answer'>
+					
+					<div id='health-restroom' class='hidden module'>
+						Will you need to reach out to the Florida State Department of Health? 
+	You’ll need to get approval from the Health Department if your event will have portable restrooms or portable/stationary holding tanks. 
+					</div>
+					
+					<div id='health-foodsales' class='hidden module'>
+						If you’re selling food and and ARE NOT using food trucks (which are independently licensed and can just show up) you’ll need a Temporary Food Service Event License from the Florida Department of Business and Professional Regulation’s Division of Hotels and Restaurants.
+					</div>
+					
+					<div id='health-foodtrucks' class='hidden module'>
+						If you have food trucks, those are independently licensed.
+					</div>
+					
+					<div id='health-none' class='hidden module'>
+						<p>You don't need to call the Health Department!</p>
+					</div>
+				</div>
+				
+			</section>
+						
+			<section id='finished-success' class='finished row hidden'>
+						
+				<h1>You're done! You should now have all of the information you need to apply for a short-term events permit -- or not.</h1>
+			
+			</section>
+			
+			<section id='finished-not-public' class='finished row hidden'>
+				
+				<h1>You're done!</h1>
+				<p>Your event is not open to the general public, and you're not selling tickets for admission. Based on that, you don't need a short-term event permit from Miami-Dade County. If you're in a municipality, though, you should still check with your city government to make sure you're totally covered.</p>
+				
+			</section>
+			
+			<section id='finished-do-not-apply' class='finished row hidden'>
+						
+				<h1>You're done!</h1>
+				<p>Your event is not going to be held in Unincorporated Municipal Service Area (UMSA) or in a County park, so the Miami-Dade short-term event permit doesn't apply to you. Please contact your municipality <i>enter muni here</i> for more information.</p	>
+			
+			</section>
+			
+			<section id='finished-park' class='finished row hidden'>
+						
+				<h1>You need to call Miami-Dade Parks &amp; Rec!</h1>
+				<p>We see that your event is going to be held in a Miami-Dade County park, which requires a few extra steps. Please call the Parks &amp; Rec department at <i>enter phone number here</i> for more information.</p>
+			
+			</section>
+			
+			<section id='finished-not-sure' class='finished row hidden'>
+						
+				<h1>You need more information!</h1>
+				<p>In order to begin the short-term event permitting process with Miami-Dade County, you need to know whether or not your event will be held in UMSA or in a County park. Come back and see us when you have an address!</p>
+			
+			</section>
+			
+			<section id='finished-no-structure' class='finished row hidden'>
+				
+				<h1>You need a special events permit!</h1>
+				<p>Because you won't have temporary structures, you can get a more general special events permit instead of a short-term events permit. Please contact WHO???</p>
+				
+			</section>
+			
+					
+		<!--
+Have you reached out to the Miami-Dade Police Department (MDPD)? The county does not require a police presence unless it’s on county property, but you want the police to be aware to reduce liability. You can contact MDPD at one of the following locations:
+5975 Miami Lakes Drive East, (305) 698-1500 
+9101 N.W. 25th Street, (305) 471-2800 
+7707 S.W. 117th Avenue, (305) 279-6929 
+Miami International Airport, (305) 876-7373 
+2950 N.W. 83rd Street, (305) 836-8601 
+10800 S.W. 211th Street, (305) 378-4300 
+15665 Biscayne Boulevard, (305) 940-9980
+
+
+
+[E]
+Will you be holding the event at a county park? A County park requires insurance if you’re hosting an event with temporary structures. Contact the park directly - a representative from Miami-Dade Parks department will send you to the places where forms are required.
+[/E]
+
+What documents do I need before starting the Short-Term Events Permit process?
+
+[FIXME] How many days in advance should you start preparing the packet and submit the permitting application? 
+
+Provide a letter from the “event holder” containing a summary of what the event is and when the events are going to take place. This will be presented to the Regulatory and Economic Resources (RER) Department as part of a packet.
+
+The “event holder” is the person responsible for the event in its entirety. This can be the property owner, the planner of the event, or another party.
+
+Produce two professionally drawn and detailed plans of the event space, done by a licensed professional. The plans will be used by MDFR and RER departments and should include the following: 
+Temporary and permanent structures
+Detailed floor plans of the insides of structures, including where catering will be set up and where electrical will need to run
+Parking and setbacks 
+
+
+
+Complete the five page Professional Certification for Short Term Event Affidavit and Verification Form. You’ll need the signatures of the property owner, event holder, lead contractor,  electrical, plumbing, and mechanical contractors as well as the signature and seal of a Florida licensed and registered architect or engineer who will be responsible for performing plan reviews and inspections for Florida Building Code requirements.
+
+How do I get a Short-Term Events Permit?
+How do I submit my event?
+
+You should have a packet of the following: the Short Term Event Affidavit, two floor plans, a letter from the event holder as well as any necessary signatures from nearby homeowners, if applicable.
+
+Submit the packet to the Miami-Dade County Permitting and Inspection Center (PIC).
+Pay a starting processing fee of $72, along with $71.50 for fire, and $51.50 for zoning. 
+You’ll receive a process number (a “C” number). That completes the affidavit check and the form goes to  planning & zoning. 
+
+
+What happens after I submit the paperwork?
+
+The RER department will review the neighborhood signatures and affidavit, and the Planning & Zoning division will review the plans to verify proper zoning.
+RER will also examine the building plans to ensure everything is up to code.
+The forms and plans will automatically be routed to Miami-Dade Fire Rescue (MDFR) for an on-site inspection. MDFR will do the following:
+
+Charge additional fees, varying by the amount of structures in the plans. For example: 1 tent is $75. A recent tennis tournament for example had around $7,000 in fees.
+
+Determine if the event requires Fire Watch (for example, if pyrotechnics are involved). 
+Notify the police, who will review the plans and event details and determine if police are required. MDPD can also recommend against MDFR approving an event in certain circumstances, in which case MDFR will deny the permit.. 
+
+Approve or deny the permit.
+
+After the RER department gives a final affidavit check, the additional fees are calculated and a permit will be issued. 
+
+What happens after I get the permit?
+
+Once you have the permit, you’re okay to set up the temporary structures for your event. 
+When the event space is completely set up, an inspector from MDFR will coordinate with the event holder to visit the site - the event holder does not need to set up an appointment.
+Event holders have generally tried to have their sites ready for inspection ahead of the weekend, as Saturday and Sunday inspections trigger overtime for the inspectors - and higher fees for the customer.
+You will have the clearance to host the event once it has passed MDFR inspection. The permit is a printed card displaying the permit number and should be posted at the site of the event.
+
+What happens when I’m done with my event?
+
+An opened permit will need to be closed after the event.
+When the event is over and ten days have elapsed, a RER inspector will visit the site to make sure all temporary structures have been removed and the site has been restored to original condition.
+If this inspection passes, the permit is closed, and you’re done!
+If this inspection fails, the Event Holder will need to come into compliance and be re-inspected, or violations may be filed and fines incurred. 
+[/UMSA-AND-SHORT-TERM]
+
+	
+		-->
+		
+		</div>
+		
+		<footer>
+			
+			<div>
+				
+				<p>Have feedback? Talk to us at <a href='mailto:miami-dade@codeforamerica.org'>miami-dade@codeforamerica.org</a><br>
+				<span class='tiny'>Built by Team Miami-Dade at <a href='http://codeforamerica.org'>Code for America</a> in partnership with the <a href='http://miamidade.gov/economy/'>Department of Economic and Regulatory Resources</a> in Miami-Dade County.</p>
+			</div>
+			
+		</footer>
+			
+	</body>
+	
+</html>
