@@ -66,45 +66,134 @@ $(document).ready(function() {
 		
 		resetFinishers();
 		
+		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#bills-end-1', '#bills-end-2', '#bills-end-3']
+		
 		switch(buttonID) {
 			
-			case 'public-yes':
+			case 'stress-1':
+			case 'stress-2':
 			
-				reset(['#ticket-sales', '#address', '#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['#address'], []);
-
+				reset(treeclimber);
+				showHide(['#worry'], []);
 				break;
 				
-			case 'public-no':
+			case 'stress-3':
+			case 'stress-4':
 			
-				reset(['#ticket-sales', '#address', '#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['#ticket-sales'], []);
-				
+				reset(treeclimber);
+				showHide(['#cause'], []);
 				break;
 			
-			case 'tickets-yes':
+			case 'worry-bills':
 			
-				reset(['#address', '#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['#address'], []);
+				reset(treeclimber);
+				showHide(['#bills', '#worry'], []);
 				break;
 				
-			case 'tickets-no':
+			case 'worry-savings':
 				
-				reset(['#address', '#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['#finished-not-public'], []);
+				reset(treeclimber);
+				showHide(['#savings', '#worry'], []);
 				break;
 				
-			case 'address-yes':
+			case 'cause-living':
 				
-				reset(['#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['form#address'], ['#no-address', '#umsa']);
+				reset(treeclimber);
+				showHide(['#paycheck', '#cause']);
 				break;
 				
-			case 'address-no':
+			case 'cause-not':
 			
-				reset(['#public-with-structures', '#certificate-of-use', '#street-closure', '#special-types', '#health']);
-				showHide(['#umsa', '#no-address'], ['form#address']);
-				$('#no-address .response').text("You don't have an address for your event yet.");
+				reset(treeclimber);
+				showHide(['#enough', '#cause']);
+				break;
+			
+			case 'cause-personal':
+			
+				reset(treeclimber);
+				showHide(['#habits', '#cause']);
+				break;
+				
+			//BILLS
+			
+			case 'bills-1':
+			
+				reset(treeclimber);
+				showHide(['#bills-end-1']);
+				innerHTML('#type').add('establishing a financial routine');
+				break;
+				
+				
+			case 'bills-2':
+			
+				reset(['']);
+				showHide(['#bills-end-2']);
+				break;
+			
+			case 'bills-3':
+			
+				reset(['']);
+				showHide(['#bills-end-3']);
+				break;
+			
+			//SAVINGS
+				
+			case 'savings-1':
+			
+				reset(['']);
+				showHide(['#savings-end-1']);
+				break;
+				
+			case 'savings-2':
+			
+				reset(['']);
+				showHide(['#savings-end-2']);
+				break;
+			
+			case 'savings-3':
+			
+				reset(['']);
+				showHide(['#savings-end-3']);
+				break;
+				
+			//PAYCHECK
+				
+			case 'paycheck-1':
+			
+				reset(['']);
+				showHide(['#paycheck-end-1']);
+				break;
+				
+			case 'paycheck-2':
+			
+				reset(['']);
+				showHide(['#paycheck-end-2']);
+				break;
+			
+			case 'paycheck-3':
+			
+				reset(['']);
+				showHide(['#paycheck-end-3']);
+				break;
+			
+			//ENOUGH
+				
+			case 'enough-1':
+			
+				reset(['']);
+				showHide(['#enough-end-1']);
+				break;
+				
+			case 'enough-2':
+			
+				reset(['']);
+				showHide(['#enough-end-2']);
+				break;
+			
+			case 'enough-3':
+			
+				reset(['']);
+				showHide(['#enough-end-3']);
 				break;
 				
 		}

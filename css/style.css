@@ -19,7 +19,7 @@ body {
 header {
 	
 	width:100%;
-	background-color: #4BC3FF;
+	background-color: #656565;
 	color:white;
 	padding-top:30px;
 	padding-bottom:20px;
@@ -78,9 +78,9 @@ section:last-child {
 
 .active {
 	
-	background-color:#4BC3FF;
+	background-color:#656565;
 	color:white !important;
-	border-color:#4BC3FF;
+	border-color:#656565;
 }
 
 .six {
