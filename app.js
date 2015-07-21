@@ -66,7 +66,7 @@ $(document).ready(function() {
 		
 		resetFinishers();
 		
-		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#bills-end-1', '#bills-end-2', '#bills-end-3']
+		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#bills-end-1', '#bills-end-2', '#bills-end-3', '#savings-end-1', '#savings-end-2', '#savings-end-3', '#paycheck-end-1', '#paycheck-end-2', '#paycheck-end-3', '#enough-end-1', '#enough-end-2', '#enough-end-3']
 		
 		switch(buttonID) {
 			
@@ -119,81 +119,80 @@ $(document).ready(function() {
 			case 'bills-1':
 			
 				reset(treeclimber);
-				showHide(['#bills-end-1']);
-				innerHTML('#type').add('establishing a financial routine');
+				showHide(['#bills-end-1', '#worry' , '#bills']);
 				break;
 				
 				
 			case 'bills-2':
 			
-				reset(['']);
-				showHide(['#bills-end-2']);
+				reset(treeclimber);
+				showHide(['#bills-end-2', '#worry' , '#bills']);
 				break;
 			
 			case 'bills-3':
 			
-				reset(['']);
-				showHide(['#bills-end-3']);
+				reset(treeclimber);
+				showHide(['#bills-end-3', '#worry' , '#bills']);
 				break;
 			
 			//SAVINGS
 				
 			case 'savings-1':
 			
-				reset(['']);
-				showHide(['#savings-end-1']);
+				reset(treeclimber);
+				showHide(['#savings-end-1', '#worry', '#savings']);
 				break;
 				
 			case 'savings-2':
 			
-				reset(['']);
-				showHide(['#savings-end-2']);
+				reset(treeclimber);
+				showHide(['#savings-end-2', '#worry', '#savings']);
 				break;
 			
 			case 'savings-3':
 			
-				reset(['']);
-				showHide(['#savings-end-3']);
+				reset(treeclimber);
+				showHide(['#savings-end-3', '#worry', '#savings']);
 				break;
 				
 			//PAYCHECK
 				
 			case 'paycheck-1':
 			
-				reset(['']);
-				showHide(['#paycheck-end-1']);
+				reset(treeclimber);
+				showHide(['#paycheck-end-1', '#cause', '#paycheck']);
 				break;
 				
 			case 'paycheck-2':
 			
-				reset(['']);
-				showHide(['#paycheck-end-2']);
+				reset(treeclimber);
+				showHide(['#paycheck-end-2', '#cause', '#paycheck']);
 				break;
 			
 			case 'paycheck-3':
 			
-				reset(['']);
-				showHide(['#paycheck-end-3']);
+				reset(treeclimber);
+				showHide(['#paycheck-end-3', '#cause', '#paycheck']);
 				break;
 			
 			//ENOUGH
 				
 			case 'enough-1':
 			
-				reset(['']);
-				showHide(['#enough-end-1']);
+				reset(treeclimber);
+				showHide(['#enough-end-1', '#cause', '#enough']);
 				break;
 				
 			case 'enough-2':
 			
-				reset(['']);
-				showHide(['#enough-end-2']);
+				reset(treeclimber);
+				showHide(['#enough-end-2', '#cause', '#enough']);
 				break;
 			
 			case 'enough-3':
 			
-				reset(['']);
-				showHide(['#enough-end-3']);
+				reset(treeclimber);
+				showHide(['#enough-end-3', '#cause', '#enough']);
 				break;
 				
 		}
