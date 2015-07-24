@@ -66,7 +66,7 @@ $(document).ready(function() {
 		
 		resetFinishers();
 		
-		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#bills-end-1', '#bills-end-2', '#bills-end-3', '#savings-end-1', '#savings-end-2', '#savings-end-3', '#paycheck-end-1', '#paycheck-end-2', '#paycheck-end-3', '#enough-end-1', '#enough-end-2', '#enough-end-3']
+		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#enough', '#habits', '#bills-end-1', '#bills-end-2', '#bills-end-3', '#savings-end-1', '#savings-end-2', '#savings-end-3', '#paycheck-end-1', '#paycheck-end-2', '#paycheck-end-3', '#enough-end-1', '#enough-end-2', '#enough-end-3', '#habits-end-1', '#habits-end-2', '#habits-end-3']
 		
 		switch(buttonID) {
 			
@@ -193,6 +193,26 @@ $(document).ready(function() {
 			
 				reset(treeclimber);
 				showHide(['#enough-end-3', '#cause', '#enough']);
+				break;
+				
+			//HABITS
+				
+			case 'habits-1':
+			
+				reset(treeclimber);
+				showHide(['#habits-end-1', '#habits', '#enough']);
+				break;
+				
+			case 'habits-2':
+			
+				reset(treeclimber);
+				showHide(['#habits-end-2', '#habits', '#enough']);
+				break;
+			
+			case 'habits-3':
+			
+				reset(treeclimber);
+				showHide(['#habits-end-3', '#habits', '#enough']);
 				break;
 				
 		}
