@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="tabletop.js"></script>
+    <script type="text/javascript" src='sheetsee.js'></script>
+    <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+<body>
+	
+<div style="margin: 0 10%;">
+  <h1>Albuquerque Financial Services Directory</h1>
+  
+  <div style="text-align: center; padding: 20px 0;">
+  <h5>Search the directory for terms like "housing" or "days".</h5>
+  <input id="placeholderFilter" type="text" placeholder="filter by.."></input>
+  </div>
+  
+  <div class="table-responsive">
+  		<div id="placeholder"></div>
+  </div>
+  
+</div>
+
+</body>
+
+
+<script id="placeholder_template" type="text/html">
+	  <table class="table table-striped">
+	    <thead>
+	    <tr><th class="tHeader">Name of Organization</th><th class="tHeader">Description</th><th class="tHeader">Time Needed to Apply</th><th class="tHeader">URL</th><th class="tHeader">Requirements</th><th class="tHeader">Type of Need</th></tr>
+	    </thead>
+	    
+	      {{#rows}}
+	        <tr><td>{{name}}</td><td>{{desc}}</td><td>{{time}}</td><td><a href="{{link}}" target="_blank">Link</a></td><td>{{req}}</td><td>{{need}}</td></tr>
+	      {{/rows}}
+	      
+	  </table>
+</script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var URL = "https://docs.google.com/spreadsheets/d/1hcZfADUtL0NKFJoY3TSSuYIbUy9W4xTT22fu1uHX52I/pubhtml"
+        Tabletop.init( { key: URL, callback: myData, simpleSheet: true } )
+    })
+    function myData(data) {
+          var tableOptions = {
+              "data": data,
+              "pagination": 10,
+              "filterDiv": "#placeholderFilter",
+              "tableDiv": "#placeholder" 
+              }
+  
+		  Sheetsee.makeTable(tableOptions)
+		  Sheetsee.initiateTableFilter(tableOptions)
+		  
+		  console.log(data);
+    }
+  </script>
+</html>
