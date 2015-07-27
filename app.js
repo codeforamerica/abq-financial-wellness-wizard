@@ -66,22 +66,17 @@ $(document).ready(function() {
 		
 		resetFinishers();
 		
-		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#enough', '#habits', '#bills-end-1', '#bills-end-2', '#bills-end-3', '#savings-end-1', '#savings-end-2', '#savings-end-3', '#paycheck-end-1', '#paycheck-end-2', '#paycheck-end-3', '#enough-end-1', '#enough-end-2', '#enough-end-3', '#habits-end-1', '#habits-end-2', '#habits-end-3']
+		var treeclimber = ['#cause', '#worry', '#savings', '#bills', '#paycheck', '#enough', '#habits', '#bills-end-1', '#bills-end-2', '#bills-end-3', '#savings-end-1', '#savings-end-2', '#savings-end-3']
 		
 		switch(buttonID) {
 			
 			case 'stress-1':
 			case 'stress-2':
-			
-				reset(treeclimber);
-				showHide(['#worry'], []);
-				break;
-				
 			case 'stress-3':
 			case 'stress-4':
 			
 				reset(treeclimber);
-				showHide(['#cause'], []);
+				showHide(['#worry'], []);
 				break;
 			
 			case 'worry-bills':
@@ -94,24 +89,6 @@ $(document).ready(function() {
 				
 				reset(treeclimber);
 				showHide(['#savings', '#worry'], []);
-				break;
-				
-			case 'cause-living':
-				
-				reset(treeclimber);
-				showHide(['#paycheck', '#cause']);
-				break;
-				
-			case 'cause-not':
-			
-				reset(treeclimber);
-				showHide(['#enough', '#cause']);
-				break;
-			
-			case 'cause-personal':
-			
-				reset(treeclimber);
-				showHide(['#habits', '#cause']);
 				break;
 				
 			//BILLS
@@ -155,65 +132,6 @@ $(document).ready(function() {
 				showHide(['#savings-end-3', '#worry', '#savings']);
 				break;
 				
-			//PAYCHECK
-				
-			case 'paycheck-1':
-			
-				reset(treeclimber);
-				showHide(['#paycheck-end-1', '#cause', '#paycheck']);
-				break;
-				
-			case 'paycheck-2':
-			
-				reset(treeclimber);
-				showHide(['#paycheck-end-2', '#cause', '#paycheck']);
-				break;
-			
-			case 'paycheck-3':
-			
-				reset(treeclimber);
-				showHide(['#paycheck-end-3', '#cause', '#paycheck']);
-				break;
-			
-			//ENOUGH
-				
-			case 'enough-1':
-			
-				reset(treeclimber);
-				showHide(['#enough-end-1', '#cause', '#enough']);
-				break;
-				
-			case 'enough-2':
-			
-				reset(treeclimber);
-				showHide(['#enough-end-2', '#cause', '#enough']);
-				break;
-			
-			case 'enough-3':
-			
-				reset(treeclimber);
-				showHide(['#enough-end-3', '#cause', '#enough']);
-				break;
-				
-			//HABITS
-				
-			case 'habits-1':
-			
-				reset(treeclimber);
-				showHide(['#habits-end-1', '#habits', '#enough']);
-				break;
-				
-			case 'habits-2':
-			
-				reset(treeclimber);
-				showHide(['#habits-end-2', '#habits', '#enough']);
-				break;
-			
-			case 'habits-3':
-			
-				reset(treeclimber);
-				showHide(['#habits-end-3', '#habits', '#enough']);
-				break;
 				
 		}
 	}
