@@ -12,12 +12,9 @@ $(document).ready(function() {
         $('#data').empty();
         var stressLevel = getSelectedValue('stress');
         var worry = getSelectedValue('worry');
-        var bill = getSelectedValue('bills');
-        var savings = getSelectedValue('savings');
-        $('#data').append('<h1>' + stressLevel + '</h1>');
-        $('#data').append('<h1>' + worry + '</h1>');
-        $('#data').append('<h1>' + bill + '</h1>');
-        $('#data').append('<h1>' + savings + '</h1>');
+        var billLevel = getSelectedValue('bills');
+        var savingsLevel = getSelectedValue('savings');
+        window.location.href = "./directory.html?filter=" + worry;
   });
 
   function showNextQuestion(id) {
