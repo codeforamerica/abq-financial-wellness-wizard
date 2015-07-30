@@ -19,4 +19,4 @@ This is an early prototype of our Financial Wellness Evaluation form.
 
 ===============================
 
-For more info you can contact us at <a href="mailto:albuquerque@codeforamerica.org">albuquerque@codeforamerica.org</a>
+For more info please contact us at <a href="mailto:albuquerque@codeforamerica.org">albuquerque@codeforamerica.org</a>
