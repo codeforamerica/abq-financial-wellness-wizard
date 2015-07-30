@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	
+	//Featherlight lightbox loads when page loads	
+	window.onload = function() {
+		$.featherlight("#introLightbox");                   
+	}	
+	
 	//button states
 	$('.button').click(function(e) {
 		e.preventDefault();
