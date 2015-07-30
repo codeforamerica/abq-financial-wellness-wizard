@@ -9,6 +9,12 @@
 	
 	font-size:.5em;
 }
+
+.column-header {
+  font-size:2em;
+  font-weight:bold;
+}
+
 /* END TYPOGRAPHY */
 
 body {
