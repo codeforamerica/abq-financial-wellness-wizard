@@ -15,6 +15,12 @@
   font-weight:bold;
 }
 
+.stress {
+  max-width: 400px;
+  height: 267px;
+}
+
+.arc path {stoke: #6a6a6a;}
 /* END TYPOGRAPHY */
 
 body {

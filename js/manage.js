@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var URL = "https://docs.google.com/spreadsheets/d/1hcZfADUtL0NKFJoY3TSSuYIbUy9W4xTT22fu1uHX52I/pubhtml";
+    var colors = ["#333333", "#666666", "#999999", "#3a3a3a"];
 
     Tabletop.init({
       key: URL,
@@ -12,37 +13,38 @@ $(document).ready(function() {
 
       populateCount(data);
       populateStress(data);
-      populateBills(data);
-      populateSavings(data);
+      populateCategory(data);
     }
 
     function populateCount(data) {
-      $('#count').prepend(data.length);
+      $("#count").prepend(data.length);
     }
 
     function populateStress(data) {
-      populateLevel(data, "1", "stress", "stress");
-      populateLevel(data, "2", "stress", "stress");
-      populateLevel(data, "3", "stress", "stress");
-      populateLevel(data, "4", "stress", "stress");
+      var stress = Sheetsee.getOccurance(data, "stress");
+      var betterStress = {"Not Stressed": stress["1"], "Stressed":stress["2"], "Very Stressed":stress["3"], "Hopeless":stress["4"]};
+      var stressColors = Sheetsee.makeColorArrayOfObject(betterStress, colors);
+      var options = {
+        units: "units",
+        m: [0, 0, 0, 0],
+        w: 400,
+        h: 267,
+        div: "#stress"
+      }
+      Sheetsee.d3PieChart(stressColors, options);
     }
 
-    function populateBills(data) {
-      var bills = Sheetsee.getMatches(data, "bills", "filter");
-      populateLevel(bills, "1", "level", "bills");
-      populateLevel(bills, "2", "level", "bills");
-      populateLevel(bills, "3", "level", "bills");
-    }
-
-    function populateSavings(data) {
-      var savings = Sheetsee.getMatches(data, "savings", "filter");
-      populateLevel(savings, "1", "level", "savings");
-      populateLevel(savings, "2", "level", "savings");
-      populateLevel(savings, "3", "level", "savings");
-    }
-
-    function populateLevel(data, level, column, id) {
-      var levelData = Sheetsee.getMatches(data, level, column);
-      $('#' + id + '-' + level).append(levelData.length);
+    function populateCategory(data) {
+      var category = Sheetsee.getOccurance(data, "filter");
+      var betterCategory = {"Paying Bills": category["bills"], "Saving Money": category["savings"]};
+      var categoryColors = Sheetsee.makeColorArrayOfObject(betterCategory, colors);
+      var options = {
+        units: "units",
+        m: [0, 0, 0, 0],
+        w: 400,
+        h: 267,
+        div: "#category"
+      }
+      Sheetsee.d3PieChart(categoryColors, options);
     }
 }) //close ready
