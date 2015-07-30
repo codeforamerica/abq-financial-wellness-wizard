@@ -17,7 +17,7 @@ This is an early prototype of our Financial Wellness Evaluation form.
 
 **A:** Never
 
-The wizard will then sort a list accordingly. hosted [here] (https://github.com/codeforamerica/abq-financial-services-directory)
+The wizard will then sort a list accordingly. hosted [here] (http://codeforamerica.github.io/abq-financial-wellness-wizard/)
 
 ===============================
 
