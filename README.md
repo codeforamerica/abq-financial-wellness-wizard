@@ -1,4 +1,6 @@
-ABQs Financial Wellness Resource Wizard [here] (https://github.com/codeforamerica/abq-financial-services-directory)
+ABQs Financial Wellness Resource Wizard 
+
+Check out the prototype [here] (https://github.com/codeforamerica/abq-financial-services-directory)
 ===============================
 
 This is an early prototype of our Financial Wellness Evaluation form. 
