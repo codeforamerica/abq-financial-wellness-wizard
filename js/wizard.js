@@ -14,7 +14,8 @@ $(document).ready(function() {
         var worry = getSelectedValue('worry');
         var billLevel = getSelectedValue('bills');
         var savingsLevel = getSelectedValue('savings');
-        window.location.href = "./directory.html?filter=" + worry;
+        var level = (worry == "bills")? billLevel : savingsLevel;
+        window.location.href = "./directory.html?filter=" + worry + "&level=" + level + "&stress=" + stressLevel;
   });
 
   function showNextQuestion(id) {
