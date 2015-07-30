@@ -1,5 +1,6 @@
 ABQs Financial Wellness Resource Wizard
 ===============================
+Check out our prototype [here] (http://codeforamerica.github.io/abq-financial-wellness-wizard/)
 
 This is an early prototype of our Financial Wellness Evaluation form. 
 
@@ -16,9 +17,6 @@ This is an early prototype of our Financial Wellness Evaluation form.
 **Q: How often do you miss a bill payment?**
 
 **A:** Never
-
-The wizard will then sort a list accordingly. hosted [here] (http://codeforamerica.github.io/abq-financial-wellness-wizard/)
-
 ===============================
 
 For more info you can contact us at <a href="mailto:albuquerque@codeforamerica.org">albuquerque@codeforamerica.org</a>
