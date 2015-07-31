@@ -14,6 +14,8 @@ $(document).ready(function() {
       populateCount(data);
       populateStress(data);
       populateCategory(data);
+      populateBarGraph(data, "bills");
+      populateBarGraph(data, "savings");
     }
 
     function populateCount(data) {
@@ -47,4 +49,21 @@ $(document).ready(function() {
       }
       Sheetsee.d3PieChart(categoryColors, options);
     }
+
+    function populateBarGraph(data, filter) {
+      var filteredData = Sheetsee.getMatches(data, filter, "filter");
+      var level = Sheetsee.getOccurance(filteredData, "level");
+      var betterLevels = [{frequency: "Never", total: level["1"], s: 1}, {frequency: "Couple Times", total: level["2"], s: 2}, {frequency: "Monthly", total: level["3"], s: 3}];
+
+      var svg = dimple.newSvg("#" + filter, 400, 271);
+      var barChart = new dimple.chart(svg, betterLevels);
+      var x = barChart.addCategoryAxis("x", "frequency");
+      x.addOrderRule("s");
+      x.title = "";
+      var y = barChart.addMeasureAxis("y", "total");
+      y.title = "respondents";
+      barChart.addSeries(null, dimple.plot.bar);
+      barChart.defaultColors = colors.map(function(hex){ return new dimple.color(hex); });
+      barChart.draw();
+    };
 }) //close ready
