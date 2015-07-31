@@ -14,6 +14,13 @@
     <link rel="stylesheet" type="text/css" href="css/featherlight.css" />
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style >
+	.sub-head {font-weight: 200;}
+	header {margin-bottom: 0;}
+	.tHeader {text-transform: uppercase;}
+	</style>
+
   </head>
 
   <body>
@@ -24,7 +31,7 @@
 		
 		<div>
 			<h2 class='bold'>Financial Needs Calculator</h2>
-			<h4 style="font-weight: 200;" class="container" id="quotation"></h4>
+			<h4 class="container sub-head" id="quotation"></h4>
 		</div>
 		
 	</header>
@@ -32,7 +39,7 @@
 	<div class="container">
 		  
 		<div>
-		  	<h4 style="font-weight: 200;">This directory is being sorted to help you <span><i id="stresslevel-print"></i></span> with <span><i id="needtype-print"></i></span>.</h4>
+		  	<h4 class="sub-head">This directory is being sorted to help you <span><i id="stresslevel-print"></i></span> with <span><i id="needtype-print"></i></span>.</h4>
 		</div>
 		
 	</div>
@@ -41,6 +48,8 @@
         <div id="placeholder"></div>
       </div>
     </div>
+    
+    <a href="/"><span class="button">Back to the beginning</span></a>
   
   </body>
 
@@ -48,12 +57,12 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="tHeader">Name of Organization</th>
+          <th class="tHeader">Organization</th>
           <th class="tHeader">Description</th>
-          <th class="tHeader">Time Needed to Apply</th>
-          <th class="tHeader">URL</th>
+          <th class="tHeader">When</th>
+          <th class="tHeader">Link</th>
           <th class="tHeader">Requirements</th>
-          <th class="tHeader">Type of Need</th></tr>
+          <th class="tHeader">Service</th></tr>
       </thead>
 
       {{#rows}}
