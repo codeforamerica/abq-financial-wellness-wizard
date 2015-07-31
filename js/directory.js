@@ -5,7 +5,7 @@ $(document).ready(function() {
     var stressLevel = getParameterByName('stress');
     var filter = getParameterByName("filter");
     var sortOrder = ["", "not stressed", "stressed", "very stressed", "hopeless"];
-
+	
     addQuotation();
 
     Tabletop.init({
@@ -42,7 +42,7 @@ $(document).ready(function() {
           if(stressLevel == "1") {
             quotation = "According to a recent Bankrate.com survey,  only about one in four Americans (24 percent) are saving more than 10 percent of their paychecks each year";
             stresslevelprint = "soon";
-            }
+           }
           else if(stressLevel == "2"){
             quotation = "Roughly 76% of Americans are living paycheck-to-paycheck, with little to no emergency savings, according to a survey released by Bankrate.com";
             stresslevelprint = "somewhat immediately";
@@ -83,6 +83,10 @@ $(document).ready(function() {
       $("#quotation").append(quotation);
       $("#needtype-print").append(needtypeprint);
       $("#stresslevel-print").append(stresslevelprint);
+      
+      //Lightbox for quote and sort context after quote and sort context are populated
+      //$("#sortLightbox").toggleClass("hidden")
+	  
     }
 	
     function sortByStress(a, b) {

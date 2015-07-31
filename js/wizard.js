@@ -1,9 +1,7 @@
 $(document).ready(function() {
 	
 	//Featherlight lightbox loads when page loads	
-	window.onload = function() {
-		$.featherlight("#introLightbox");                   
-	}	
+	$.featherlight("#introLightbox");                   
 	
 	//button states
 	$('.button').click(function(e) {
