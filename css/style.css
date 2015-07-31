@@ -114,3 +114,9 @@ section:last-child {
 	min-height:38px !important;
 	height: auto !important;
 }
+
+.sort-callout {padding: 7px; border: 1px dotted black; text-align: center; margin: 25px 0;}
+
+.red {color: red;}
+.yellow {color: yellow;}
+.blue {color: blue;}

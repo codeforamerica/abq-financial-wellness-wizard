@@ -31,25 +31,58 @@ $(document).ready(function() {
     }
 
     function addQuotation() {
-      var quotation = ""
+      var quotation = "";
+      var needtypeprint = "";
+      var stresslevelprint = "";
 
         if(filter == "bills") {
-          if(stressLevel == "1")
-            quotation = "According to a recent Bankrate.com survey,  only about one in four Americans (24 percent) are saving more than 10 percent of their paychecks each year"
-          else if(stressLevel == "2")
-            quotation = "Roughly 76% of Americans are living paycheck-to-paycheck, with little to no emergency savings, according to a survey released by Bankrate.com"
-          else
-            quotation = "More than 35 percent of Americans have debts and unpaid bills that have been reported to collection agencies, according to a study released by the Urban Institute"
+	        
+	        needtypeprint = "bills"
+	        
+          if(stressLevel == "1") {
+            quotation = "According to a recent Bankrate.com survey,  only about one in four Americans (24 percent) are saving more than 10 percent of their paychecks each year";
+            stresslevelprint = "soon";
+            }
+          else if(stressLevel == "2"){
+            quotation = "Roughly 76% of Americans are living paycheck-to-paycheck, with little to no emergency savings, according to a survey released by Bankrate.com";
+            stresslevelprint = "somewhat immediately";
+            }
+          else {
+            quotation = "More than 35 percent of Americans have debts and unpaid bills that have been reported to collection agencies, according to a study released by the Urban Institute";
+            stresslevelprint = "immediately";
+            }
         } else {
-          if(stressLevel == "1")
-            quotation = "Did you know that Americans who are thinking about both retirement and emergency savings should be putting away roughly 15 percent of annual incomes each year"
-          else if(stressLevel == "2")
-            quotation = "Did you know that Americans who are thinking about both retirement and emergency savings should be putting away roughly 15 percent of annual incomes each year"
-          else
-            quotation = "Fewer than one in four Americans have enough money in their savings account to cover at least six months of expenses, enough to help cushion the blow of a job loss, medical emergency or some other unexpected event"
+	        
+	        needtypeprint = "savings";
+	        
+          if(stressLevel == "1") {
+            quotation = "Did you know that Americans who are thinking about both retirement and emergency savings should be putting away roughly 15 percent of annual incomes each year";
+            stresslevelprint = "soon";
+            }
+          else if(stressLevel == "2"){
+            quotation = "Did you know that Americans who are thinking about both retirement and emergency savings should be putting away roughly 15 percent of annual incomes each year";
+            stresslevelprint = "somewhat immediately";
+            }
+          else {
+            quotation = "Fewer than one in four Americans have enough money in their savings account to cover at least six months of expenses, enough to help cushion the blow of a job loss, medical emergency or some other unexpected event";
+            stresslevelprint = "immediately";
+            }
         }
+        
+/*
+
+		if(stresslevelprint == "3"){
+			$("#stresslevel-print").addClass("red").removeClass("yellow blue");
+		} else if(stresslevelprint == "2"){
+			$("#stresslevel-print").addClass("yellow").removeClass("blue red");
+		} else{
+			$("#stresslevel-print").addClass("blue").removeClass("yellow red");
+		}
+*/	
 
       $("#quotation").append(quotation);
+      $("#needtype-print").append(needtypeprint);
+      $("#stresslevel-print").append(stresslevelprint);
     }
 	
     function sortByStress(a, b) {
