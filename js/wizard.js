@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	
+	//Featherlight lightbox loads when page loads	
+	$.featherlight("#introLightbox");                   
+	
 	//button states
 	$('.button').click(function(e) {
 		e.preventDefault();
