@@ -2,7 +2,7 @@ ABQs Financial Wellness Resource Wizard
 ===============================
 Check out our prototype [here] (http://codeforamerica.github.io/abq-financial-wellness-wizard/)
 
-This is an early prototype of our Financial Wellness Evaluation form. 
+This is a prototype application created by the Albuquerque Code for America Fellows. It helps people understand their financial situation.
 
 ##Here are some examples of the questions that are asked:
 
