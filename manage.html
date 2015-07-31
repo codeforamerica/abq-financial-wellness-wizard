@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Financial Wellness Calculator v.2</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+    <script src='js/manage.js' type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!--[if (lt IE 9)&(gt IE 6)&(!IEMobile)]>
+		  <link rel="stylesheet" href="../style/css/layout.css" media="all">
+		<![endif]-->
+		
+		<!-- Link to a 32x32 favicon 
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		-->
+		
+		<!-- (Optional) Link to a 60x60 bookmark icon for iOS 
+		<link rel="apple-touch-icon-precomposed" href="../style/favicons/60x60/flag-red.png"/>
+		-->
+	</head>
+	
+	<body>
+		<header>
+			<div>
+				<h2 class='bold'>Financial Needs Calculator</h2>
+				<p>This a demo of what the ABQ Code for America fellows are considering to help people understand their financial situation.</p>
+			</div>
+		</header>
+	
+		<div id='container'>
+      <section>
+        <div class='row'>
+          <div class="six columns">
+            <div class='column-header'>Stress Level</div>
+            <div id='stress'></div>
+          </div>
+
+          <div class='six columns'>
+            <div class='column-header'>Category</div>
+            <div id='category'></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class='row'>
+          <div class="twelve columns column-header">
+            <span id='count'> respondents.</span>
+          </div>
+        </div>
+      </section>
+		</div>
+		
+    <footer>
+      <div>
+        <p>We appreciate feedback, you can talk to us with this email address <a href='mailto:albuquerque@codeforamerica.org'>albuquerque@codeforamerica.org</a><br>
+				<span class='tiny'>Built by Miami-Dade team. Forked by Jennings of the CfA ABQ team with love and hugs and stuff.</p>
+			</div>
+    </footer>
+	</body>
+	
+</html>
