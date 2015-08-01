@@ -1627,7 +1627,7 @@ module.exports.d3PieChart = function(data, options) {
         .attr("x", width / 3.0)
         .attr("dy", function(d, i) { return (height / 2) - i*(data.length * 12) - 50}) // Space between labels
         .attr("dx", 0)
-        .text(function(d) { return d.labels + ", " + d.units})
+        .text(function(d) { return d.labels + ", " + d.units + "%"})
         .style("fill", function(d) { return d.hexcolor })
         .attr("index_value", function(d) { return "index-" + d.labels.replace(" ", "-") })
         .attr("class", function(d, i) { return "labels-" + "index-" + d.labels.replace(" ", "-") + " aLabel "})

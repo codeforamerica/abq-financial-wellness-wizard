@@ -15,12 +15,17 @@
   font-weight:bold;
 }
 
-.stress {
-  max-width: 400px;
+#stress, #category {
+  max-width: 100%;
   height: 267px;
 }
 
+#savings, #bills {
+  max-width: 400px;
+  height: 271px;
+}
 .arc path {stoke: #6a6a6a;}
+
 /* END TYPOGRAPHY */
 
 body {
