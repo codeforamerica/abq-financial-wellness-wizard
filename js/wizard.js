@@ -33,7 +33,16 @@ $(document).ready(function() {
         break;
       case "savings":
       case "bills":
-        $('#fetch').removeClass('hidden');
+        $("#money").removeClass("hidden");
+        break;
+      case "money":
+        $("#deficit").removeClass("hidden");
+        break;
+      case "deficit":
+        $("#purchase").removeClass("hidden");
+        break;
+      case "purchase":
+        $("#fetch").removeClass("hidden");
         break;
     }
   }
