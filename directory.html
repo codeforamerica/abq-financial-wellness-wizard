@@ -6,46 +6,63 @@
     <script type="text/javascript" src='js/sheetsee.js'></script>
     <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
     <script type="text/javascript" src='js/directory.js'></script>
+    <script type="text/javascript" src='js/featherlight.js'></script>
     
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/featherlight.css" />
+    
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style >
+	.sub-head {font-weight: 200;}
+	header {margin-bottom: 0;}
+	.tHeader {text-transform: uppercase;}
+	</style>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <div style="margin: 0 10%;">
+    <div>
 	    
     <header>
 		
 		<div>
 			<h2 class='bold'>Financial Needs Calculator</h2>
-			<p>This is a prototype application created by the City of Albuquerque Code for America Fellows. It helps people understand their own financial wellness.</p>
-				<p id="quotation"></p>
+			<h4 class="container sub-head" id="quotation"></h4>
 		</div>
 		
 	</header>
+	
+	<div class="container">
+		  
+		<div>
+		  	<h4 class="sub-head">This directory is being sorted to help you <span><i id="stresslevel-print"></i></span> with <span><i id="needtype-print"></i></span>.</h4>
+		</div>
 		
-      <h1>Albuquerque Financial Services Directory</h1>
-
-      <div class="table-responsive">
+	</div>
+	
+	<div class="table-responsive container">
         <div id="placeholder"></div>
       </div>
     </div>
+    
+    <a href="/"><span class="button">Back to the beginning</span></a>
+  
   </body>
 
   <script id="placeholder_template" type="text/html">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="tHeader">Name of Organization</th>
+          <th class="tHeader">Organization</th>
           <th class="tHeader">Description</th>
-          <th class="tHeader">Time Needed to Apply</th>
-          <th class="tHeader">URL</th>
+          <th class="tHeader">When</th>
+          <th class="tHeader">Link</th>
           <th class="tHeader">Requirements</th>
-          <th class="tHeader">Type of Need</th></tr>
+          <th class="tHeader">Service</th></tr>
       </thead>
 
       {{#rows}}
