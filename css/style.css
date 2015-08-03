@@ -9,6 +9,23 @@
 	
 	font-size:.5em;
 }
+
+.column-header {
+  font-size:2em;
+  font-weight:bold;
+}
+
+#stress, #category {
+  max-width: 100%;
+  height: 267px;
+}
+
+#savings, #bills {
+  max-width: 400px;
+  height: 271px;
+}
+.arc path {stoke: #6a6a6a;}
+
 /* END TYPOGRAPHY */
 
 body {

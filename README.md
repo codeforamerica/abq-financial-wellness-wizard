@@ -1,7 +1,8 @@
 ABQs Financial Wellness Resource Wizard
 ===============================
+Check out our prototype [here] (http://codeforamerica.github.io/abq-financial-wellness-wizard/)
 
-This is an early prototype of our Financial Wellness Evaluation form. 
+This is a prototype application created by the City of Albuquerque Code for America Fellows. It helps people understand their own financial wellness.
 
 ##Here are some examples of the questions that are asked:
 
@@ -16,9 +17,6 @@ This is an early prototype of our Financial Wellness Evaluation form.
 **Q: How often do you miss a bill payment?**
 
 **A:** Never
-
-The wizard will then sort a list accordingly. hosted [here] (https://github.com/codeforamerica/abq-financial-services-directory)
-
 ===============================
 
 For more info you can contact us at <a href="mailto:albuquerque@codeforamerica.org">albuquerque@codeforamerica.org</a>

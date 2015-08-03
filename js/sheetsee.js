@@ -1583,7 +1583,7 @@ module.exports.d3PieChart = function(data, options) {
   var selectedText = d3.selectAll(textSelector)
   selectedText.transition()
     .duration(150)
-    .style("font-size", "12px").style("font-weight", "bold").style("fill", options.hiColor)
+    .style("font-size", "17px").style("font-weight", "bold").style("fill", options.hiColor)
   selectedText.attr("class", function(d, i) { return "labels-" + indexValue + " bigg" })
   }
   function mouseOut(d) {
@@ -1601,20 +1601,20 @@ module.exports.d3PieChart = function(data, options) {
   var selectedText = d3.selectAll(textSelector)
   selectedText.transition()
     .duration(200)
-    .style("font-size", "10px").style("font-weight", "normal").style("fill", function(d) { return d.hexcolor })
+    .style("font-size", "16px").style("font-weight", "normal").style("fill", function(d) { return d.hexcolor })
   }
 
   var g = svg.selectAll(".arc")
       .data(pie(data))
     .enter().append("g")
-      .attr("index_value", function(d, i) { return "index-" + i })
+      .attr("index_value", function(d, i) { return "index-" + d.data.labels.replace(" ", "-") })
       .attr("class", function(d, i) { return "slice-" + "index-" + i + " slice arc" })
       .on("mouseover", mouseOver)
       .on("mouseout", mouseOut)
 
   var path = g.append("path")
       .attr("d", arc)
-      .attr("index_value", function(d, i) { return "index-" + i })
+      .attr("index_value", function(d, i) { return "index-" + d.data.labels.replace(" ", "-") })
       .attr("class", function(d, i) { return "path-" + "index-" + i })
       .style("fill", function(d) { return d.data.hexcolor})
       .attr("fill", function(d) { return d.data.hexcolor})
@@ -1624,16 +1624,19 @@ module.exports.d3PieChart = function(data, options) {
   .enter().append("g") // Append legend elements
       .append("text")
         .attr("text-anchor", "start")
-        .attr("x", width / 2.5)
-        .attr("y", function(d, i) { return (height / 2) - i*(data.length * 20)})
+        .attr("x", width / 3.0)
+        .attr("dy", function(d, i) { return (height / 2) - i*(data.length * 12) - 50}) // Space between labels
         .attr("dx", 0)
-        .attr("dy", "-140px") // Controls padding to place text above bars
-        .text(function(d) { return d.labels + ", " + d.units})
+        .text(function(d) { return d.labels + ", " + d.units + "%"})
         .style("fill", function(d) { return d.hexcolor })
-        .attr("index_value", function(d, i) { return "index-" + i })
-        .attr("class", function(d, i) { return "labels-" + "index-" + i + " aLabel "})
+        .attr("index_value", function(d) { return "index-" + d.labels.replace(" ", "-") })
+        .attr("class", function(d, i) { return "labels-" + "index-" + d.labels.replace(" ", "-") + " aLabel "})
         .on('mouseover', mouseOver)
         .on("mouseout", mouseOut)
+
+  function createIndexValue(data, index) {
+    return "index-" + data.labels.replace("-", " ");
+  }
 }
 
 // Line Chart
