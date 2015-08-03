@@ -1,44 +1,57 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Financial Wellness Calculator v.2</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/tabletop.js"></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
-    <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
     <script type="text/javascript" src='js/directory.js'></script>
-    <script type="text/javascript" src='js/featherlight.js'></script>
-    
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/skeleton.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/featherlight.css" />
-    
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!--[if (lt IE 9)&(gt IE 6)&(!IEMobile)]>
+		  <link rel="stylesheet" href="../style/css/layout.css" media="all">
+		<![endif]-->
+		
+		<!-- Link to a 32x32 favicon 
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		-->
+		
+		<!-- (Optional) Link to a 60x60 bookmark icon for iOS 
+		<link rel="apple-touch-icon-precomposed" href="../style/favicons/60x60/flag-red.png"/>
+		-->
+	</head>
 	
-
-
-  </head>
-
-  <body>
-	<header>
-		<div class="row">
-	        <div class="eight columns title">
-	          <h1>Financial Needs Calculator</h1>
-	        </div>
-	        <div class="four columns menu">
-	          <ul>
-	            <li><a href="./directory.html?filter=bills&amp;level=3&amp;stress=1">What is it?</a> |</li>
-	            <li><a href="./index.html">Take the test</a> |</li>
-	            <li><a href="./manage.html">See Data</a></li>
-	          </ul>
-	        </div>
-      	</div>
-      		<div class="row">
-		        <div class="twelve columns">
-					<h4 class="container sub-head" id="quotation"></h4>
-		        </div>
+	<body>
+		<header>
+			<div class="row">
+        <div class="eight columns title">
+          <h2 class='bold'>Financial Needs Calculator</h2>
+        </div>
+        <div class="four columns menu">
+          <ul>
+            <li><a href="./directory.html?filter=bills&level=3&stress=1">What is it?</a> |</li>
+            <li><a href="./index.html">Take the test</a> |</li>
+            <li><a href="./manage.html">See Data</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <p class="sub-head" id="quotation"></p>
+        </div>
 			</div>
-	</header>
+		</header>
 	
 	<div class="container">
 		  
