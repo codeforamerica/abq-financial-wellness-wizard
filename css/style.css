@@ -1,37 +1,38 @@
 /* TYPOGRAPHY */
 
-.bold {
-	
-	font-weight:bold;
+.bold {	font-weight:bold; }
+
+.menu {
+  float: right;
+  padding-top: 20px;
 }
 
-.tiny {
-	
-	font-size:.5em;
-}
+.menu ul { list-style-type: none; }
+
+.menu ul li { display: inline; }
+
+.tiny {	font-size:.5em; }
+
+.title { float: left; }
 
 .column-header {
   font-size:2em;
   font-weight:bold;
 }
 
-#stress, #category {
+#stressChart, #categoryChart {
   max-width: 100%;
   height: 267px;
 }
 
-#savings, #bills {
+#savingsChart, #billsChart {
   max-width: 400px;
   height: 271px;
 }
-.arc path {stoke: #6a6a6a;}
+
+.arc path { stoke: #6a6a6a; }
 
 /* END TYPOGRAPHY */
-
-body {
-	
-	
-}
 
 header {
 	
@@ -131,3 +132,7 @@ section:last-child {
 	min-height:38px !important;
 	height: auto !important;
 }
+
+.red {color: red;}
+.yellow {color: yellow;}
+.blue {color: blue;}
