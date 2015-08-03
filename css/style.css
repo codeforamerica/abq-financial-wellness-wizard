@@ -1,3 +1,8 @@
+a {
+  color: #F1F2B8; }
+a:hover {
+  color: #FFF; }
+
 /* TYPOGRAPHY */
 
 .bold {	font-weight:bold; }
@@ -37,7 +42,7 @@
 header {
 	
 	width:100%;
-	background-color: #656565;
+	background-color: #8698A6;
 	color:white;
 	padding-top:30px;
 	padding-bottom:20px;
@@ -96,9 +101,10 @@ section:last-child {
 
 .active {
 	
-	background-color:#656565;
+	background-color:#8698A6;
 	color:white !important;
-	border-color:#656565;
+	border-color:#8698A6;
+	color: #F1F2B8;
 }
 
 .six {
