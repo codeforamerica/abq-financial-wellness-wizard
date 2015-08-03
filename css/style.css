@@ -131,3 +131,7 @@ section:last-child {
 	min-height:38px !important;
 	height: auto !important;
 }
+
+.red {color: red;}
+.yellow {color: yellow;}
+.blue {color: blue;}
