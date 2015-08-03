@@ -74,10 +74,13 @@ $(document).ready(function() {
       var x = barChart.addCategoryAxis("x", "frequency");
       x.addOrderRule("s");
       x.title = "";
-      var y = barChart.addMeasureAxis("y", "total");
+      var y = barChart.addMeasureAxis("y", "count");
       y.title = "respondents";
-      y.tickFormat ="%";
-      barChart.addSeries("stress", dimple.plot.bar);
+      var series = barChart.addSeries("stress", dimple.plot.bar);
+      series.getTooltipText = function (e) {
+        var item = (betterLevels.find(function(o,i,ary){return o.stress == e.aggField[0] && o.frequency == e.x}).percentage * 100).toFixed(0);
+              return [ e.aggField[0], item + "% of " + e.x ];
+                  };
       barChart.defaultColors = colors.map(function(hex){ return new dimple.color(hex); });
       barChart.addLegend(0, 10, 410, 20, "right");
       barChart.draw();
@@ -87,10 +90,10 @@ $(document).ready(function() {
       var filterByLevel = Sheetsee.getMatches(data, level, "level");
       var stress = Sheetsee.getOccurance(filterByLevel, "stress");
       var total = filterByLevel.length;
-      var not = {stress: "Not Stressed", frequency: levelName, total: percentage(stress["1"], total), s: level};
-      var some = {stress: "Stressed", frequency: levelName, total: percentage(stress["2"], total), s: level};
-      var very = {stress: "Very Stressed", frequency: levelName, total: percentage(stress["3"], total), s: level};
-      var hopeless = {stress: "Hopeless", frequency: levelName, total: percentage(stress["4"], total), s: level};
+      var not = {stress: "Not Stressed", frequency: levelName, count: stress["1"], percentage: percentage(stress["1"], total), s: level};
+      var some = {stress: "Stressed", frequency: levelName, count: stress["2"], percentage: percentage(stress["2"], total), s: level};
+      var very = {stress: "Very Stressed", frequency: levelName, count: stress["3"], percentage: percentage(stress["3"], total), s: level};
+      var hopeless = {stress: "Hopeless", frequency: levelName, count: stress["4"], percentage: percentage(stress["4"], total), s: level};
       return [not, some, very, hopeless];
     }
 
