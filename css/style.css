@@ -1,14 +1,19 @@
 /* TYPOGRAPHY */
 
-.bold {
-	
-	font-weight:bold;
+.bold {	font-weight:bold; }
+
+.menu {
+  float: right;
+  padding-top: 20px;
 }
 
-.tiny {
-	
-	font-size:.5em;
-}
+.menu ul { list-style-type: none; }
+
+.menu ul li { display: inline; }
+
+.tiny {	font-size:.5em; }
+
+.title { float: left; }
 
 .column-header {
   font-size:2em;
@@ -24,14 +29,10 @@
   max-width: 400px;
   height: 271px;
 }
-.arc path {stoke: #6a6a6a;}
+
+.arc path { stoke: #6a6a6a; }
 
 /* END TYPOGRAPHY */
-
-body {
-	
-	
-}
 
 header {
 	
