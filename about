@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+    <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='js/directory.js'></script>
+    <script type="text/javascript" src='js/featherlight.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/featherlight.css" />
+    
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style >
+	.sub-head {font-weight: 200;}
+	header {margin-bottom: 0;}
+	.tHeader {text-transform: uppercase;}
+	</style>
+
+  </head>
+
+   <div>
+        
+        <header>
+            <div class="row">
+        <div class="eight columns title">
+          <h2 class='bold'>Financial Needs Calculator</h2>
+        </div>
+        <div class="four columns menu">
+          <ul>
+            <li><a href="./directory.html?filter=bills&level=3&stress=1">What is it?</a> |</li>
+            <li><a href="./index.html">Take the test</a> |</li>
+            <li><a href="./manage.html">See Data</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+    
+        </div>
+            </div>
+        </header>
+    </header>
+
+    <div class="about-what?">
+    <h2>What is TiaSabia?</h2>
+    <p>TiaSabia gives employers the power to help their employees assess and support their complete financial picture, and ultimately increase focus, productivity, and happiness in the workplace.</p>
+    </div>
+
+    <div class="about-why?">
+    <h2>Why?</h2>
+    <p>Americans are struggling to cover small financial gaps in their lives. This often leads to mental and emotional fatigue, and financial paralysis. Many people are lost and don’t know where to go or what to do. In most cases they first turn to dangerous financial products for help, then their family and employer. That’s why we’re proposing a platform that can be utilized through the employer/employee relationship.</p>
+    </div>
+
+     <div class="about-how?">
+    <h2>How?</h2>
+     <p>By building public/private partnerships between financial education institutions such as WESST, CNM and Nusenda, Albuquerque residents will be aware of and have access to the financial services that can help them. Our hope is that the City will see an increase in social mobility for lower / working class residents, and a drop in registration for social services.  When residents feel self reliant they will work harder, be more productive, and follow through on more opportunity.</p>
+     </div>
