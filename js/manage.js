@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var URL = "https://docs.google.com/spreadsheets/d/1hcZfADUtL0NKFJoY3TSSuYIbUy9W4xTT22fu1uHX52I/pubhtml";
-    var colors = ["#333333", "#666666", "#999999", "#3a3a3a"];
+    var colors = ["rgba(134,152,166,0.25)", "rgba(134,152,166,0.50)", "rgba(134,152,166,0.75)", "rgba(134,152,166,1)"];
     var stressLevels = ["Not Stressed", "Stressed", "Very Stressed", "Hopeless"];
 
     Tabletop.init({

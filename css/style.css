@@ -1,3 +1,6 @@
+a {color: #F1F2B8; text-decoration: none; }
+a:hover {color: #FFF; }
+
 /* TYPOGRAPHY */
 
 .bold {	font-weight:bold; }
@@ -37,7 +40,7 @@
 header {
 	
 	width:100%;
-	background-color: #656565;
+	background-color: #8698A6;
 	color:white;
 	padding-top:30px;
 	padding-bottom:20px;
@@ -55,7 +58,7 @@ header div {
 footer {
 	
 	width:100%;
-	background-color:#d1d1d1;
+	background-color: #8698A6;
 	padding-top:20px;
 	padding-bottom:20px;
 }
@@ -81,6 +84,15 @@ footer p {
 	
 }
 
+tbody tr:nth-child(even) {
+   background-color: rgba(134,152,166,0.89);
+   color: white;
+}
+
+tbody tr:nth-child(odd) a, .table-pagination a {
+   color: #8698A6;
+}
+
 section {
 	
 	margin-top:30px;
@@ -96,9 +108,10 @@ section:last-child {
 
 .active {
 	
-	background-color:#656565;
+	background-color:#8698A6;
 	color:white !important;
-	border-color:#656565;
+	border-color:#8698A6;
+	color: #F1F2B8;
 }
 
 .six {
@@ -136,3 +149,40 @@ section:last-child {
 .red {color: red;}
 .yellow {color: yellow;}
 .blue {color: blue;}
+
+/*Bootstrap table formatting*/
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table .table {
+  background-color: #fff;
+}
