@@ -1,7 +1,13 @@
 $(document).ready(function() {
 	
 	//Featherlight lightbox loads when page loads	
-	$.featherlight("#introLightbox");                   
+	$.featherlight("#introLightbox");    
+	
+	//Reset button at end of form, reloads and scrolls to top of page
+	$('#reload').click(function() {
+    	      location.reload();
+			  window.scrollTo(x-coord, y-coord);
+	});               
 	
 	//button states
 	$('.button').click(function(e) {
