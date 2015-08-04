@@ -4,7 +4,7 @@
 
 .menu {
   float: right;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .menu ul { list-style-type: none; }
@@ -48,7 +48,6 @@ footer div,
 header div {
 	
 	width:80%;
-	text-align: center;
 	margin:0 auto;
 }
 
