@@ -69,86 +69,159 @@
 			</div>
 		</header>
 	
-		<div id='container'>
-			
-			<section id="stress">
-				
-				<div class='row'>
-					<h2>What is your level of financial stress?</h2>
-					<span class='button' id='stress-1'>Not stressed</span> 
-					<span class='button' id='stress-2'>Stressed</span>
-					<span class='button' id='stress-3'>Very Stressed</span>
-					<span class='button' id='stress-4'>Hopeless</span>
+		<div id="container" >
+      <section id="overview">
+        <span class="section-header">Overview Questions</span>
+
+				<div class="row question-row">
+					<span class="question">How often do you feel stress over finances?</span>
+					<span class='button' id='stress-1'>Every day</span> 
+					<span class='button' id='stress-2'>Weekly</span>
+					<span class='button' id='stress-3'>Monthly</span>
+					<span class='button' id='stress-4'>Not often</span>
 				</div>
-				
-			</section>
-			
-			<section id="worry" class='hidden'>
-				
-				<div class='row'>
-					<h2>What do you worry about more, paying bills regularly or saving money for a rainy day?</h2>
+
+				<div class="row question-row hidden">
+					<span class="question">If you had to choose one, which one of the options below would you say causes the most stress?</span>
 					<span class='button' id='worry-bills'>Paying Bills</span> 
 					<span class='button' id='worry-savings'>Saving Money</span>
+					<span class='button' id='worry-freedom'>Freedom to Spend Money</span>
+					<span class='button' id='worry-goals'>Setting Goals</span>
+				</div>
+      </section>
+
+      <section id="present-security" class="hidden">
+        <span class="section-header">Present Security</span>
+        <span class="section-subtitle">Feeling in control and confident about your money.</span>
+
+				<div class='row question-row'>
+					<span class="question">How much of your monthly income goes towards bills?</span>
+					<span class='button' id='bills-1'>Some</span> 
+					<span class='button' id='bills-2'>Most</span>
+					<span class='button' id='bills-3'>All</span>
+					<span class='button' id='bills-4'>Not Sure</span>
 				</div>
 				
-			</section>
-			
-			<section id="bills" class='hidden'>
-				
-				<div class='row'>
-					<h2>How often do you miss a bill payment?</h2>
-					<span class='button' id='bills-3'>Never</span> 
-					<span class='button' id='bills-2'>A couple of times a year</span>
-					<span class='button' id='bills-1'>Monthly, maybe</span>
+				<div class='row question-row hidden'>
+					<span class="question">How often do you worry about covering all of your expenses in a month?</span>
+					<span class='button' id='expenses-1'>Never</span> 
+					<span class='button' id='expenses-2'>Sometimes</span>
+					<span class='button' id='expenses-3'>Often</span>
+					<span class='button' id='expenses-4'>Not Sure</span>
 				</div>
-				
-			</section>
-			
-			<section id="savings" class='hidden'>
-	
-				<div class='row'>
-					<h2>How often do you put money into savings?</h2>
+
+				<div class='row question-row hidden'>
+					<span class="question">Do you ever miss a bill payment?</span>
+					<span class='button' id='expenses-1'>Never</span> 
+					<span class='button' id='expenses-2'>Sometimes</span>
+					<span class='button' id='expenses-3'>Often</span>
+					<span class='button' id='expenses-4'>Not Sure</span>
+				</div>
+      </section>
+
+      <section id="future-security" class="hidden">
+        <span class="section-header">Future Security</span>
+        <span class="section-subtitle">Absorbing financial bumps when they happen.</span>
+
+				<div class='row question-row'>
+					<span class="question">How often do you put money into savings?</span>
 					<span class='button' id='savings-1'>Never</span> 
-					<span class='button' id='savings-2'>A couple of times a year</span>
-					<span class='button' id='savings-3'>Monthly, maybe</span>
+					<span class='button' id='savings-2'>Sometimes</span>
+					<span class='button' id='savings-3'>Often</span>
+					<span class='button' id='savings-4'>Not Sure</span>
 				</div>
 	
-			</section>
-			
-			<section id="money" class='hidden'>
-	
-				<div class='row'>
-					<h2>Do you have money left over after paying your bills?</h2>
-					<span class='button' id='money-1'>Never</span> 
-					<span class='button' id='money-2'>A little, but not much</span>
-					<span class='button' id='money-3'>Yes</span>
+				<div class='row question-row hidden'>
+					<span class="question">How often do you take money out of savings to cover an expense?</span>
+					<span class='button' id='withdraw-1'>Never</span>
+					<span class='button' id='withdraw-2'>Sometimes</span>
+					<span class='button' id='withdraw-3'>Often</span>
+					<span class='button' id='withdraw-4'>Not Sure</span>
 				</div>
 	
-			</section>
+				<div class='row question-row hidden'>
+					<span class="question">If you could go without working, how long would your savings support you?</span>
+					<span class='button' id='support-1'>One Month or Less</span>
+					<span class='button' id='support-2'>Two to Three Months</span>
+					<span class='button' id='support-3'>Six Months or More</span>
+					<span class='button' id='support-4'>Not Sure</span>
+				</div>
+      </section>
 
-			<section id="deficit" class='hidden'>
-	
-				<div class='row'>
-					<h2>How would you describe your deficit every month?</h2>
-					<span class='button' id='deficit-1'>A few dollars</span> 
-					<span class='button' id='deficit-2'>A few meals</span>
-					<span class='button' id='deficit-3'>I'm racking up interest on a credit card or loan</span>
-				</div>
-	
-			</section>
+      <section id="present-freedom" class="hidden">
+        <span class="section-header">Present Freedom</span>
+        <span class="section-subtitle">Having the flexibility to spend money.</span>
+        <h5>How often do you feel like you have the financial freedom to do the following?</h5>
 
-			<section id="purchase" class='hidden'>
-	
-				<div class='row'>
-					<h2>How often do you make a purchase you know you can't afford?</h2>
-					<span class='button' id='purchase-1'>Twice a year</span> 
-					<span class='button' id='purchase-2'>Every few months</span>
-					<span class='button' id='purchase-3'>Too much </span>
+				<div class='row question-row'>
+          <span class="question">Be generous with family or friends?</span>
+          <span class='button' id='present-family-1'>Never</span>
+          <span class='button' id='present-family-2'>Sometimes</span>
+          <span class='button' id='present-family-3'>Often</span>
+          <span class='button' id='present-family-4'>Not Sure</span>
 				</div>
-	
-			</section>
 
-      <section id="fetch" class='hidden'><button id="submit">Submit</button><a href=""><button id="reload" style="margin-left: 3px;" class="button">Reset</button></a></section>
+				<div class='row question-row hidden'>
+          <span class="question">Continuing to develop professionally through education or job training?</span>
+          <span class='button' id='present-develop-1'>Never</span>
+          <span class='button' id='present-develop-2'>Sometimes</span>
+          <span class='button' id='present-develop-3'>Often</span>
+          <span class='button' id='present-develop-4'>Not Sure</span>
+				</div>
+
+				<div class='row question-row hidden'>
+          <span class="question">Taking a vacation?</span>
+          <span class='button' id='present-vacation-1'>Never</span>
+          <span class='button' id='present-vacation-2'>Sometimes</span>
+          <span class='button' id='present-vacation-3'>Often</span>
+          <span class='button' id='present-vacation-4'>Not Sure</span>
+				</div>
+      </section>
+
+      <section id="future-freedom" class="hidden">
+        <span class="section-header">Future Freedom</span>
+        <span class="section-subtitle">Getting on track to meet financial goals.</span>
+        <h5>In the future, how much would you prioritize?</h5>
+
+				<div class='row question-row'>
+          <span class="question">Be generous with family or friends?</span>
+          <span class='button' id='future-family-1'>Never</span>
+          <span class='button' id='future-family-2'>Sometimes</span>
+          <span class='button' id='future-family-3'>Often</span>
+          <span class='button' id='future-family-4'>Not Sure</span>
+				</div>
+
+				<div class='row question-row hidden'>
+          <span class="question">Continuing to develop professionally through education or job training?</span>
+          <span class='button' id='future-develop-1'>Never</span>
+          <span class='button' id='future-develop-2'>Sometimes</span>
+          <span class='button' id='future-develop-3'>Often</span>
+          <span class='button' id='future-develop-4'>Not Sure</span>
+				</div>
+
+				<div class='row question-row hidden'>
+          <span class="question">Taking a vacation?</span>
+          <span class='button' id='future-vacation-1'>Never</span>
+          <span class='button' id='future-vacation-2'>Sometimes</span>
+          <span class='button' id='future-vacation-3'>Often</span>
+				</div>
+      </section>
+
+      <section id="open" class="hidden">
+        <span class="section-header">Open Forum</span>
+
+				<div class='row question-row'>
+					<span class="question">Is there anything we didn't cover that you'd like for us to know?</span>
+          <textarea type="textarea" id="open-text" rows="5" cols="80"></textarea>
+				</div>
+      </section>
+
+      <section id="fetch" class='hidden'>
+        <button id="submit">Submit</button>
+        <a href="">
+          <button id="reload" style="margin-left: 3px;" class="button">Reset</button>
+        </a>
+      </section>
 		</div>
 		
 		<footer>

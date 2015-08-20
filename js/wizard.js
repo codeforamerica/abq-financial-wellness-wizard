@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	//Featherlight lightbox loads when page loads	
 	$.featherlight("#introLightbox");    
 	
@@ -7,7 +6,7 @@ $(document).ready(function() {
 	$('#reload').click(function() {
     	      location.reload();
 			  window.scrollTo(x-coord, y-coord);
-	});               
+	});
 	
 	//button states
 	$('.button').click(function(e) {
@@ -18,38 +17,15 @@ $(document).ready(function() {
 	});
 
   $('#submit').click(function(e) {
-        $('#data').empty();
-        var stressLevel = getSelectedValue('stress');
-        var worry = getSelectedValue('worry');
-        var billLevel = getSelectedValue('bills');
-        var savingsLevel = getSelectedValue('savings');
-        var level = (worry == "bills")? billLevel : savingsLevel;
-        window.location.href = "./directory.html?filter=" + worry + "&level=" + level + "&stress=" + stressLevel;
+        window.location.href = "./thanks.html";
   });
 
   function showNextQuestion(id) {
-    switch(id.split('-')[0]) {
-      case "stress":
-        $('#worry').removeClass('hidden');
-        break;
-      case "worry":
-        var answeredBills = id.split('-')[1]=='bills'
-        $('#bills').toggleClass('hidden', !answeredBills);
-        $('#savings').toggleClass('hidden', answeredBills);
-        break;
-      case "savings":
-      case "bills":
-        $("#money").removeClass("hidden");
-        break;
-      case "money":
-        $("#deficit").removeClass("hidden");
-        break;
-      case "deficit":
-        $("#purchase").removeClass("hidden");
-        break;
-      case "purchase":
-        $("#fetch").removeClass("hidden");
-        break;
+    if(id) {
+      var next = $('#container').find('.hidden').first();
+      next.removeClass('hidden');
+      if(next.attr('id') == 'open')
+        $('#fetch').removeClass('hidden');
     }
   }
 
