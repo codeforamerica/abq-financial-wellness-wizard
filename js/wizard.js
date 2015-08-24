@@ -4,8 +4,8 @@ $(document).ready(function() {
 	
 	//Reset button at end of form, reloads and scrolls to top of page
 	$('#reload').click(function() {
-    	      location.reload();
-			  window.scrollTo(x-coord, y-coord);
+    location.reload();
+    window.scrollTo(x-coord, y-coord);
 	});
 	
 	//button states
@@ -17,13 +17,14 @@ $(document).ready(function() {
 	});
 
   $('#submit').click(function(e) {
-        window.location.href = "./thanks.html";
+    window.location.href = "./thanks.html";
   });
 
   function showNextQuestion(id) {
     if(id) {
       var next = $('#container').find('.hidden').first();
       next.removeClass('hidden');
+      scroll(next.get()[0], next.parent());
       if(next.attr('id') == 'open')
         $('#fetch').removeClass('hidden');
     }
@@ -36,4 +37,8 @@ $(document).ready(function() {
     return selected;
   }
 
+  function scroll(element, parent){
+    $(element).animate({ scrollTop: $(element).scrollTop() + $(element).offset().top - $(element).offset().top }, { duration: 'slow', easing: 'swing'});
+    $('html,body').animate({ scrollTop: $(element).offset().top - ($(window).height()/3) }, { duration: 1000, easing: 'swing'});
+  }
 }) //close ready
