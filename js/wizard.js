@@ -10,10 +10,11 @@ $(document).ready(function() {
 	
 	//button states
 	$('.button').click(function(e) {
-		e.preventDefault();
-    $(this).siblings().removeClass('active');
+		console.log()
+		// e.preventDefault();
+		$(this).siblings().removeClass('active');
 		$(this).addClass('active');
-    showNextQuestion($(this).attr('id'));
+		showNextQuestion($(this).attr('id'));
 	});
 
   $('#submit').click(function(e) {
