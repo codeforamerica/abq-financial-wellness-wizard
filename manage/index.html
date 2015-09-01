@@ -1,0 +1,45 @@
+---
+layout: default
+title: Manage
+permalink: /manage/
+---
+<div id='container'>
+      <section>
+        <div class='row'>
+          <div class="six columns">
+            <div class='column-header'>Stress Level</div>
+            <div id='stressChart'></div>
+          </div>
+
+          <div class='six columns'>
+            <div class='column-header'>Category</div>
+            <div id='categoryChart'></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class='row'>
+          <div class='six columns'>
+            <div class='column-header'>Savings</div>
+            <div id='savingsChart'></div>
+          </div>
+
+          <div class='six columns'>
+            <div class='column-header'>Bills</div>
+            <div id='billsChart'></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class='row'>
+          <div class="twelve columns column-header">
+            <span id='count'> respondents.</span>
+          </div>
+        </div>
+      </section>
+	</div>
+
+
+<script src='{{ "/js/featherlight.js" | prepend: site.baseurl }}' type="text/javascript"></script>
