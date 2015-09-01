@@ -6,9 +6,9 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <title>Financial Wellness Calculator</title>
 
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--     <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" /> -->
@@ -39,11 +39,11 @@
           <h1>Financial Needs Calculator</h1>
         </div>
         <div class="four columns menu">
-          <ul>
+          <!--<ul>
             <li><a href="./about.html">What is it?</a> |</li>
             <li><a href="./index.html">Take the test</a> |</li>
             <li><a href="./manage.html">See Data</a></li>
-          </ul>
+          </ul>-->
         </div>
       </div>
       <div class="row">
@@ -54,14 +54,96 @@
 		</header>
 	
 		<div id="container">
-			<h2 style="text-align: center">Thank you!</h2>
+			<h2 style="text-align: center">Thank you for filling out our financial evaluation!</h2>
+			<p>We appreciate your time and look forward with providing your organization with these insights. In the meantime we'd like to ask you a few questions about what types of resources you'd like to see this form provide. Select all that apply below.</p>
+			
+			<!-- WUFOO FORM YAY! !! ! ! -->
+			<form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+      action="https://cfaabq.wufoo.com/forms/zg0lihw0jm9st9/#public">
+			<div>
+			<span>
+			<input id="Field1" name="Field1" type="checkbox" class="field checkbox" value="Home Ownership" tabindex="1"     />
+			<label class="choice" for="Field1">Home Ownership</label>
+			</span>
+			<span>
+			<input id="Field2" name="Field2" type="checkbox" class="field checkbox" value="Transportation Assistance" tabindex="2"     />
+			<label class="choice" for="Field2">Transportation Assistance</label>
+			</span>
+			<span>
+			<input id="Field3" name="Field3" type="checkbox" class="field checkbox" value="Short Term Loans of Advances" tabindex="3"     />
+			<label class="choice" for="Field3">Short Term Loans of Advances</label>
+			</span>
+			<span>
+			<input id="Field4" name="Field4" type="checkbox" class="field checkbox" value="Savings Strategies" tabindex="4"     />
+			<label class="choice" for="Field4">Savings Strategies</label>
+			</span>
+			<span>
+			<input id="Field5" name="Field5" type="checkbox" class="field checkbox" value="Matched Savings Accounts" tabindex="5"     />
+			<label class="choice" for="Field5">Matched Savings Accounts</label>
+			</span>
+			<span>
+			<input id="Field6" name="Field6" type="checkbox" class="field checkbox" value="Retirement Counseling" tabindex="6"     />
+			<label class="choice" for="Field6">Retirement Counseling</label>
+			</span>
+			<span>
+			<input id="Field7" name="Field7" type="checkbox" class="field checkbox" value="Financial Capabilities Tools (Apps, Games)" tabindex="7"     />
+			<label class="choice" for="Field7">Financial Capabilities Tools (Apps, Games)</label>
+			</span>
+			<span>
+			<input id="Field8" name="Field8" type="checkbox" class="field checkbox" value="Financial Literacy Training (Banking, Home Accounting)" tabindex="8"     />
+			<label class="choice" for="Field8">Financial Literacy Training (Banking, Home Accounting)</label>
+			</span>
+			<span>
+			<input id="Field9" name="Field9" type="checkbox" class="field checkbox" value="Financial Coaching (One on One)" tabindex="9"     />
+			<label class="choice" for="Field9">Financial Coaching (One on One)</label>
+			</span>
+			<span>
+			<input id="Field10" name="Field10" type="checkbox" class="field checkbox" value="Financial Coaching (Group, Workshops)" tabindex="10"     />
+			<label class="choice" for="Field10">Financial Coaching (Group, Workshops)</label>
+			</span>
+			<span>
+			<input id="Field11" name="Field11" type="checkbox" class="field checkbox" value="Professional Training (Skills Training)" tabindex="11"     />
+			<label class="choice" for="Field11">Professional Training (Skills Training)</label>
+			</span>
+			<span>
+			<input id="Field12" name="Field12" type="checkbox" class="field checkbox" value="Educational Opportunities" tabindex="12"     />
+			<label class="choice" for="Field12">Educational Opportunities</label>
+			</span>
+			<span>
+			<input id="Field13" name="Field13" type="checkbox" class="field checkbox" value="Tax Credits" tabindex="13"     />
+			<label class="choice" for="Field13">Tax Credits</label>
+			</span>
+			<span>
+			<input id="Field14" name="Field14" type="checkbox" class="field checkbox" value="Rental Assistance (Government Services)" tabindex="14"     />
+			<label class="choice" for="Field14">Rental Assistance (Government Services)</label>
+			</span>
+			<span>
+			<input id="Field15" name="Field15" type="checkbox" class="field checkbox" value="Cash Assistance (Government Services)" tabindex="15"     />
+			<label class="choice" for="Field15">Cash Assistance (Government Services)</label>
+			</span>
+			<span>
+			<input id="Field16" name="Field16" type="checkbox" class="field checkbox" value="Food Assistance (Government Services)" tabindex="16"     />
+			<label class="choice" for="Field16">Food Assistance (Government Services)</label>
+			</span>
+			</div>
+			</fieldset>
+			<div>
+				<input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit"/></div>			
+				<div style="display: none">				
+					<label for="comment">Do Not Fill This Out</label>
+								<textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+								<input type="hidden" id="idstamp" name="idstamp" value="2sWYFxkf9qwY5CmrJ0oQnka+hH9g4VMoTM/tYo/FWxE=" />
+				</div>
+			</form>
+			<!-- END OF WUFOO FORM, EVEN MORE YAY!  !!  !!  ! -->
+			
     	</div>
 
 		<footer>
 			<div>
-				<p>We love feedback! If you have any questions send us an email <a href='mailto:albuquerque@codeforamerica.org'>albuquerque@codeforamerica.org</a><br>
-          <span class='tiny'>Built by Miami-Dade team. Forked by the <a href="http://www.codeforamerica.org/governments/albuquerque/">CfA ABQ</a> team with love and hugs and stuff.</p>
+				<p>The Code for America Albuquerque team is piloting this prototype with your company to help get you the tools you need to be happy financially. If you have any questions, please send us an email <a href='mailto:albuquerque@codeforamerica.org'>albuquerque@codeforamerica.org</a>.</p>
 			</div>
 		</footer>
+		
 	</body>
 </html>
