@@ -210,3 +210,11 @@ section:last-child {
 .table .table {
   background-color: #fff;
 }
+
+.reset-btn {margin-left: 3px;}
+
+
+/* forms */
+
+fieldset label {display: inline; padding-left: 3%;}
+fieldset label:first-child {display: inline; padding-left: 0%;}
