@@ -1,0 +1,10 @@
+# Site settings
+title: Albuquerque Code for America Financial Wellness Calculator
+email: albuquerque@codeforamerica.org
+description: The Albuquerque Code for America Fellow are working on a tool to help evaluate residents financial wellness and provide resources accordingly.
+
+baseurl: "abq-financial-wellness-wizard" # the subpath of your site, e.g. /blog/
+url: "http://codeforamerica.github.io/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
