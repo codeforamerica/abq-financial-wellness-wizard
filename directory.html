@@ -13,6 +13,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/tabletop.js"></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
+    <script type="text/javascript" src='js/directory.js'></script>
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -47,58 +48,59 @@
       </div>
       <div class="row">
         <div class="twelve columns">
-          <p>This a demo of what the ABQ Code for America fellows are working on to help residents understand their financial situation.</p>
+          <p class="sub-head" id="quotation"></p>
         </div>
 			</div>
 		</header>
 	
-		<div id='container'>
-      <section>
-        <div class='row'>
-          <div class="six columns">
-            <div class='column-header'>Stress Level</div>
-            <div id='stressChart'></div>
-          </div>
-
-          <div class='six columns'>
-            <div class='column-header'>Category</div>
-            <div id='categoryChart'></div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class='row'>
-          <div class='six columns'>
-            <div class='column-header'>Savings</div>
-            <div id='savingsChart'></div>
-          </div>
-
-          <div class='six columns'>
-            <div class='column-header'>Bills</div>
-            <div id='billsChart'></div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class='row'>
-          <div class="twelve columns column-header">
-            <span id='count'> respondents.</span>
-          </div>
-        </div>
-      </section>
+	<div class="container">
+		  
+		<div>
+		  	<h4 class="sub-head">This directory is being sorted to help you <span><i id="stresslevel-print"></i></span> with <span><i id="needtype-print"></i></span>.</h4>
 		</div>
 		
+	</div>
+	
+	<div class="table-responsive container">
+        <div id="placeholder"></div>
+    </div>
+
+	<div style="text-align: center">
+		<a href="http://codeforamerica.github.io/abq-financial-wellness-wizard/"><span class="button">Back to the beginning</span></a>
+	</div>
+
     <footer>
       <div>
         <p>We love feedback! If you have any questions send us an email <a href='mailto:albuquerque@codeforamerica.org'>albuquerque@codeforamerica.org</a><br>
           <span class='tiny'>Built by Miami-Dade team. Forked by the <a href="http://www.codeforamerica.org/governments/albuquerque/">CfA ABQ</a> team with love and hugs and stuff.</p>
 			</div>
     </footer>
-	</body>
-	
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
-    <script src='js/manage.js' type="text/javascript"></script>
+    </div>
+  
+  </body>
+
+  <script id="placeholder_template" type="text/html">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="tHeader">Organization</th>
+          <th class="tHeader">Description</th>
+          <th class="tHeader">When</th>
+          <th class="tHeader">Link</th>
+          <th class="tHeader">Requirements</th>
+          <th class="tHeader">Service</th></tr>
+      </thead>
+
+      {{#rows}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{desc}}</td>
+        <td>{{time}}</td>
+        <td><a href="{{link}}" target="_blank">Link</a></td>
+        <td>{{req}}</td>
+        <td>{{need}}</td>
+      </tr>
+      {{/rows}}
+    </table>
+  </script>
 </html>
