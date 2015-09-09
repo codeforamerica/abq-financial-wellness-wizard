@@ -1,0 +1,224 @@
+a {color: #F1F2B8; text-decoration: none; }
+a:hover {color: #FFF; }
+
+/* TYPOGRAPHY */
+
+.bold {	font-weight:bold; }
+
+.menu {
+  float: right;
+  padding-top: 16px;
+}
+
+.menu ul { list-style-type: none; }
+
+.menu ul li { display: inline; }
+
+.question {
+  display: block;
+  font-size: 1.8rem;
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.question-row {
+  padding-top: 20px;
+}
+
+.section-header {
+  font-size: 4.2rem;
+  font-weight: 300;
+	border-bottom:1px solid grey;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 3.2rem;
+  font-style: italic;
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+.tiny {	font-size:.5em; }
+
+.title { float: left; }
+
+.column-header {
+  font-size:2em;
+  font-weight:bold;
+}
+
+#stressChart, #categoryChart {
+  max-width: 100%;
+  height: 267px;
+}
+
+#savingsChart, #billsChart {
+  max-width: 400px;
+  height: 271px;
+}
+
+.arc path { stoke: #6a6a6a; }
+
+/* END TYPOGRAPHY */
+
+header {
+	
+	width:100%;
+	background-color: #8698A6;
+	color:white;
+	padding-top:30px;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+
+footer div,
+header div {
+	
+	width:80%;
+	margin:0 auto;
+}
+
+footer {
+	
+	width:100%;
+	background-color: #8698A6;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+footer p {
+	
+	padding:0;
+	margin:0;
+	line-height: normal;
+}
+
+.hidden {
+	
+	display:none;
+}
+
+#container {
+	
+	width:80%;
+	min-height:800px;
+	padding:10px;
+	margin:0 auto;
+	
+}
+
+tbody tr:nth-child(even) {
+   background-color: rgba(134,152,166,0.89);
+   color: white;
+}
+
+tbody tr:nth-child(odd) a, .table-pagination a {
+   color: #8698A6;
+}
+
+section {
+	
+	margin-top:30px;
+	margin-bottom:30px;
+	padding-bottom:30px;
+	border-bottom:1px solid grey;
+}
+
+section:last-child {
+	
+	border-bottom:0;
+}
+
+.active {
+	
+	background-color:#8698A6;
+	color:white !important;
+	border-color:#8698A6;
+	color: #F1F2B8;
+}
+
+.six {
+	
+	min-height:150px;
+}
+
+.columns {
+	
+	margin-left:0 !important;
+}
+
+.answer {
+	
+	padding-left:20px;
+}
+
+.question {
+	
+	padding-right:20px;
+}
+
+.question div, 
+.answer div {
+	
+	margin-bottom:30px;
+}
+
+.button {
+	
+	min-height:38px !important;
+	height: auto !important;
+}
+
+.red {color: red;}
+.yellow {color: yellow;}
+.blue {color: blue;}
+
+/*Bootstrap table formatting*/
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table .table {
+  background-color: #fff;
+}
+
+.reset-btn {margin-left: 3px;}
+
+
+/* forms */
+
+fieldset label {display: inline; padding-left: 3%;}
+fieldset label:first-child {display: inline; padding-left: 0%;}
+
+#form1 label, #form1 input {display: inline;}
+#form1 span {display: block; padding-left: 5px}
+#form1 input {margin-right: 10px;}
