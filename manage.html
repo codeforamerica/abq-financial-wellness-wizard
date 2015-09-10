@@ -1,9 +1,58 @@
----
-layout: base2
-title: Manage
-permalink: /manage/
----
-<div id='container'>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Financial Wellness Calculator v.2</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!--[if (lt IE 9)&(gt IE 6)&(!IEMobile)]>
+		  <link rel="stylesheet" href="../style/css/layout.css" media="all">
+		<![endif]-->
+		
+		<!-- Link to a 32x32 favicon 
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		-->
+		
+		<!-- (Optional) Link to a 60x60 bookmark icon for iOS 
+		<link rel="apple-touch-icon-precomposed" href="../style/favicons/60x60/flag-red.png"/>
+		-->
+	</head>
+	
+	<body>
+		<header>
+			<div class="row">
+        <div class="eight columns title">
+          <h2 class='bold'>Financial Needs Calculator</h2>
+        </div>
+        <div class="four columns menu">
+          <ul>
+            <li><a href="./about.html">What is it?</a> |</li>
+            <li><a href="./index.html">Take the test</a> |</li>
+            <li><a href="./manage.html">See Data</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <p>This a demo of what the ABQ Code for America fellows are working on to help residents understand their financial situation.</p>
+        </div>
+			</div>
+		</header>
+	
+		<div id='container'>
       <section>
         <div class='row'>
           <div class="six columns">
@@ -39,4 +88,17 @@ permalink: /manage/
           </div>
         </div>
       </section>
-	</div>
+		</div>
+		
+    <footer>
+      <div>
+        <p>We love feedback! If you have any questions send us an email <a href='mailto:albuquerque@codeforamerica.org'>albuquerque@codeforamerica.org</a><br>
+          <span class='tiny'>Built by Miami-Dade team. Forked by the <a href="http://www.codeforamerica.org/governments/albuquerque/">CfA ABQ</a> team with love and hugs and stuff.</p>
+			</div>
+    </footer>
+	</body>
+	
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+    <script src='js/manage.js' type="text/javascript"></script>
+</html>
