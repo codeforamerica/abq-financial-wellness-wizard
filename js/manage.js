@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var URL = "https://docs.google.com/spreadsheets/d/1hcZfADUtL0NKFJoY3TSSuYIbUy9W4xTT22fu1uHX52I/pubhtml";
+    var URL = "https://docs.google.com/spreadsheets/d/1U_2YzAoJ55tHhtWBuYGktqun73-xDv0zxkprPqusjSs/pubhtml";
+    var sheets = ["MRCOG", "HeadingHome"];
     var colors = ["rgba(134,152,166,0.25)", "rgba(134,152,166,0.50)", "rgba(134,152,166,0.75)", "rgba(134,152,166,1)"];
-    var stressLevels = ["Not Stressed", "Stressed", "Very Stressed", "Hopeless"];
 
     Tabletop.init({
       key: URL,
@@ -9,33 +9,70 @@ $(document).ready(function() {
       simpleSheet: true
     });
 
-    function showData(data, tabletop) {
-      data = tabletop.sheets("Wizard").elements;
+    function showData(spreadsheets, tabletop) {
+      var sheetName = sheets[0];
+      var sheet = tabletop.sheets(sheetName);
+      var columnNames = sheet.column_names;
+      var data = sheet.elements;
 
-      populateCount(data);
-      populateStress(data);
-      populateCategory(data);
-      populateBarGraph(data, "bills");
-      populateBarGraph(data, "savings");
+      createSections(columnNames);
+      $.each(columnNames, function() {
+        populatePieChart(data, this);
+      });
     }
 
-    function populateCount(data) {
-      $("#count").prepend(data.length);
+    function createSections(columnNames) {
+      var container = $("#container");
+      var row;
+
+      $.each(columnNames, function(index, element) {
+        if(index%2==0) {
+          var section = $('<section/>').appendTo('#container');
+          row = $('<div/>', {
+                class: 'row'
+          }).appendTo(section);
+        }
+
+        var column = $('<div/>', {
+          class: 'six columns'
+        }).appendTo(row);
+
+        var header = $('<div/>', {
+          class: 'column-header',
+          text: element
+        }).appendTo(column);
+
+        var chart = $('<div/>', {
+          id: element,
+          class: 'pieChart'
+        }).appendTo(column);
+      });
     }
 
-    function populateStress(data) {
-      var stress = Sheetsee.getOccurance(data, "stress");
-      var total = data.length;
-      var betterStress = {"Not Stressed": percent(stress["1"], total), "Stressed":percent(stress["2"], total), "Very Stressed":percent(stress["3"], total), "Hopeless":percent(stress["4"], total)};
-      var stressColors = Sheetsee.makeColorArrayOfObject(betterStress, colors);
+    function populatePieChart(data, columnName) {
+      var formattedData = getFormattedData(data, columnName);
+      var colorArray = Sheetsee.makeColorArrayOfObject(formattedData, colors);
+
       var options = {
         units: "units",
         m: [0, 0, 0, 0],
         w: 500,
         h: 267,
-        div: "#stressChart"
+        div: "#" + columnName
       }
-      Sheetsee.d3PieChart(stressColors, options);
+      Sheetsee.d3PieChart(colorArray, options);
+    }
+
+    function getFormattedData(data, columnName) {
+      var columnData = Sheetsee.getOccurance(data, columnName);
+      var sum = 0;
+      var arrayOfOccurances = Object.keys(columnData).map(key=>columnData[key]);
+      $.each(arrayOfOccurances, function(){sum+=parseFloat(this) || 0;});
+      $.each(Object.keys(columnData), function(){
+        var occurance = columnData[this];
+        columnData[this] = percent(occurance, sum);
+      })
+      return columnData;
     }
 
     function percentage(value, total) {
@@ -44,21 +81,6 @@ $(document).ready(function() {
 
     function percent(value, total) {
       return (percentage(value, total)*100).toFixed(0);
-    }
-
-    function populateCategory(data) {
-      var category = Sheetsee.getOccurance(data, "filter");
-      var total = data.length;
-      var betterCategory = {"Paying Bills": percent(category["bills"], total), "Saving Money": percent(category["savings"], total)};
-      var categoryColors = Sheetsee.makeColorArrayOfObject(betterCategory, colors);
-      var options = {
-        units: "units",
-        m: [0, 0, 0, 0],
-        w: 500,
-        h: 267,
-        div: "#categoryChart"
-      }
-      Sheetsee.d3PieChart(categoryColors, options);
     }
 
     function populateBarGraph(data, filter) {
@@ -85,16 +107,4 @@ $(document).ready(function() {
       barChart.addLegend(0, 10, 410, 20, "right");
       barChart.draw();
     };
-
-    function getLevelStress(data, level, levelName) {
-      var filterByLevel = Sheetsee.getMatches(data, level, "level");
-      var stress = Sheetsee.getOccurance(filterByLevel, "stress");
-      var total = filterByLevel.length;
-      var not = {stress: "Not Stressed", frequency: levelName, count: stress["1"], percentage: percentage(stress["1"], total), s: level};
-      var some = {stress: "Stressed", frequency: levelName, count: stress["2"], percentage: percentage(stress["2"], total), s: level};
-      var very = {stress: "Very Stressed", frequency: levelName, count: stress["3"], percentage: percentage(stress["3"], total), s: level};
-      var hopeless = {stress: "Hopeless", frequency: levelName, count: stress["4"], percentage: percentage(stress["4"], total), s: level};
-      return [not, some, very, hopeless];
-    }
-
 }) //close ready
