@@ -1,21 +1,24 @@
-<header class="site-header">
-
-  <div class="row">
-        <div class="eight columns title">
-          <h1>Financial Needs Calculator</h1>
-        </div>
-        <div class="four columns menu">
-          <!--<ul>
-            <li><a href="/about">What is it?</a> |</li>
-            <li><a href="/index.html">Take the test</a> |</li>
-            <li><a href="/manage">See Data</a></li>
-          </ul>-->
-        </div>
-      </div>
-      <div class="row">
-        <div class="twelve columns">
-          <p>This a demo of what the ABQ Code for America fellows are considering to help people understand their financial situation.</p>
-        </div>
-			</div>
-
-</header>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <h1 class="mdl-layout-title">Financial Wellness Calculator</h1>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only hidden">
+        <a class="mdl-navigation__link" href="{{ "/about.html" | prepend: site.baseurl }}">About</a>
+        <a class="mdl-navigation__link" href="{{ "/index.html" | prepend: site.baseurl }}">Evaluation</a>
+        <a class="mdl-navigation__link" href="{{ "/manage.html" | prepend: site.baseurl }}">Data</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer hidden">
+    <span class="mdl-layout-title">F.W.C.</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="{{ "/about.html" | prepend: site.baseurl }}">About</a>
+      <a class="mdl-navigation__link" href="{{ "/index.html" | prepend: site.baseurl }}">Evaluation</a>
+      <a class="mdl-navigation__link" href="{{ "/manage.html" | prepend: site.baseurl }}">See example data</a>
+    </nav>
+  </div>
+</div>
