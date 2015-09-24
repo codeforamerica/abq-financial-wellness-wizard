@@ -1,6 +1,8 @@
 a {color: #F1F2B8; text-decoration: none; }
 a:hover {color: #FFF; }
 
+body {overflow-x: hidden}
+
 /* TYPOGRAPHY */
 
 .bold {	font-weight:bold; }
@@ -101,7 +103,7 @@ footer p {
 }
 
 #container {
-	
+	overflow-x: hidden;
 	width:80%;
 	min-height:800px;
 	padding:100px 10px 10px 10px;
