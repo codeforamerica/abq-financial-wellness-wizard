@@ -26,17 +26,14 @@ a:hover {color: #FFF; }
 }
 
 .section-header {
-  font-size: 4.2rem;
-  font-weight: 300;
-	border-bottom:1px solid grey;
+  font-size: 4.0rem;
 }
 
 .section-subtitle {
   display: block;
-  font-size: 3.2rem;
-  font-style: italic;
-  font-weight: 300;
   padding-bottom: 20px;
+  font-size: 1.2rem;
+  padding-top: 0.7rem;
 }
 
 .tiny {	font-size:.5em; }
@@ -65,24 +62,23 @@ a:hover {color: #FFF; }
 header {
 	
 	width:100%;
-	background-color: #8698A6;
+	background-color: #FFF;
 	color:white;
 	padding-top:30px;
 	padding-bottom:20px;
 	margin-bottom:20px;
 }
 
+
+
 footer div,
 header div {
-	
 	width:80%;
 	margin:0 auto;
 }
 
 footer {
-	
 	width:100%;
-	background-color: #8698A6;
 	padding-top:20px;
 	padding-bottom:20px;
 }
@@ -99,11 +95,16 @@ footer p {
 	display:none;
 }
 
+.hidden-2 {
+	
+	display:none;
+}
+
 #container {
 	
 	width:80%;
 	min-height:800px;
-	padding:10px;
+	padding:100px 10px 10px 10px;
 	margin:0 auto;
 	
 }
@@ -154,7 +155,7 @@ section:last-child {
 }
 
 .question {
-	
+	font-size: 1.5rem;
 	padding-right:20px;
 }
 
@@ -214,10 +215,14 @@ section:last-child {
 .reset-btn {margin-left: 3px;}
 
 
-/* forms */
+/* forms 
 
 fieldset label {display: inline; padding-left: 3%;}
-fieldset label:first-child {display: inline; padding-left: 0%;}
+fieldset label:first-child {display: inline; padding-left: 0%;}*/
+
+label, legend {font-weight: 300;}
+
+.mdl-radio {margin: 10px; padding-top: 1px;}
 
 #form1 label, #form1 input {display: inline;}
 #form1 span {display: block; padding-left: 5px}
