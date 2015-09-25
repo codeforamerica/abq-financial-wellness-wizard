@@ -43,18 +43,8 @@ body {overflow-x: hidden}
 .title { float: left; }
 
 .column-header {
-  font-size:2em;
+  font-size:1.1em;
   font-weight:bold;
-}
-
-#stressChart, #categoryChart {
-  max-width: 100%;
-  height: 267px;
-}
-
-#savingsChart, #billsChart {
-  max-width: 400px;
-  height: 271px;
 }
 
 .arc path { stoke: #6a6a6a; }

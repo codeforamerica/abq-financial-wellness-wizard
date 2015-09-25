@@ -1563,6 +1563,7 @@ module.exports.d3PieChart = function(data, options) {
   .append("g")
     .attr("transform", "translate(" + width / 3 + "," + height / 2 + ")")
 
+  var divId = options.div.slice(1);
   var data = data
 
   data.forEach(function(d) {
@@ -1607,14 +1608,14 @@ module.exports.d3PieChart = function(data, options) {
   var g = svg.selectAll(".arc")
       .data(pie(data))
     .enter().append("g")
-      .attr("index_value", function(d, i) { return "index-" + d.data.labels.replace(" ", "-") })
+      .attr("index_value", function(d, i) { return "index-" + divId + "-" + d.data.labels.replace(/\ /g, '-') })
       .attr("class", function(d, i) { return "slice-" + "index-" + i + " slice arc" })
       .on("mouseover", mouseOver)
       .on("mouseout", mouseOut)
 
   var path = g.append("path")
       .attr("d", arc)
-      .attr("index_value", function(d, i) { return "index-" + d.data.labels.replace(" ", "-") })
+      .attr("index_value", function(d, i) { return "index-" + divId + "-" + d.data.labels.replace(/\ /g, "-") })
       .attr("class", function(d, i) { return "path-" + "index-" + i })
       .style("fill", function(d) { return d.data.hexcolor})
       .attr("fill", function(d) { return d.data.hexcolor})
@@ -1629,14 +1630,10 @@ module.exports.d3PieChart = function(data, options) {
         .attr("dx", 0)
         .text(function(d) { return d.labels + ", " + d.units + "%"})
         .style("fill", function(d) { return d.hexcolor })
-        .attr("index_value", function(d) { return "index-" + d.labels.replace(" ", "-") })
-        .attr("class", function(d, i) { return "labels-" + "index-" + d.labels.replace(" ", "-") + " aLabel "})
+        .attr("index_value", function(d) { return "index-" + divId + "-" + d.labels.replace(/\ /g, "-") })
+        .attr("class", function(d, i) { return "labels-" + "index-" + divId + "-" + d.labels.replace(/\ /g, "-") + " aLabel "})
         .on('mouseover', mouseOver)
         .on("mouseout", mouseOut)
-
-  function createIndexValue(data, index) {
-    return "index-" + data.labels.replace("-", " ");
-  }
 }
 
 // Line Chart
