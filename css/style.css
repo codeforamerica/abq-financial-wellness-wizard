@@ -239,3 +239,6 @@ textarea {width: 100%;}
 	    padding-left: 0%;
 	}
 }
+
+.aboutpage i {font-size: 4.0rem;     vertical-align: text-bottom;}
+.aboutpage i, .aboutpage h2 {color: rgb(96,125,139);}
