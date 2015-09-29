@@ -1,6 +1,7 @@
 var URL = "https://docs.google.com/spreadsheets/d/1U_2YzAoJ55tHhtWBuYGktqun73-xDv0zxkprPqusjSs/pubhtml";
-var colors = ["rgba(134,152,166,0.25)", "rgba(134,152,166,0.50)", "rgba(134,152,166,0.75)", "rgba(134,152,166,1)"];
-var graphTitleMapping = {"overview_1": "Overview 1", "overview_2": "Overview 2", "present_security_1":"How much of your monthly income goes towards bills?", "present_security_2":"How often do you worry about covering your expenses?", "present_security_3":"Do you ever miss a bill payment?", "future_security_1":"How often do you put money into savings?", "future_security_2":"How often do you take money out of savings to cover an expense?", "future_security_3":"If you went without working, how long would your savings support you?", "future_freedom_1":"In the future, how often would you like to prioritize the following?", "present_freedom_1":"How often do you feel like you have the financial freedom to do the following?"};
+//var colors = ["rgba(134,152,166,0.25)", "rgba(134,152,166,0.50)", "rgba(134,152,166,0.75)", "rgba(134,152,166,1)"];
+var colors = ["rgb(158, 158, 158)", "rgb(121, 85, 72)", "rgb(96, 125, 139)", "rgb(156, 39, 176)"];
+var graphTitleMapping = {"overview_1": "How often do you feel stress over finances?", "overview_2": "Which of these causes the most stress?", "present_security_1":"How much of your monthly income goes towards bills?", "present_security_2":"How often do you worry about covering your expenses?", "present_security_3":"Do you ever miss a bill payment?", "future_security_1":"How often do you put money into savings?", "future_security_2":"How often do you take money out of savings to cover an expense?", "future_security_3":"If you went without working, how long would your savings support you?", "future_freedom_1":"In the future, how often would you like to prioritize the following?", "present_freedom_1":"How often do you feel like you have the financial freedom to do the following?"};
 var graphSeriesMapping = {"future_freedom_1":"Family", "future_freedom_2":"Education", "future_freedom_3":"Vacation", "present_freedom_1":"Family", "present_freedom_2":"Education", "present_freedom_3":"Vacation"};
 var noAnswer = "Blank";
 
@@ -99,7 +100,7 @@ function getGraphTitle(column) {
 
 function populateLineGraph(data, columnNames) {
   var columnName = columnNames.slice(0, 1);
-  var svg = dimple.newSvg("#" + columnName, 500, 267);
+  var svg = dimple.newSvg("#" + columnName, 700, 425);
   var formattedData = [];
 
   $.each(columnNames, function() {
@@ -138,7 +139,7 @@ function populatePieChart(data, columnName) {
     units: "units",
     m: [0, 0, 0, 0],
     w: 500,
-    h: 267,
+    h: 300,
     div: "#" + columnName
   }
   Sheetsee.d3PieChart(colorArray, options);
@@ -172,7 +173,7 @@ function populateBarGraph(data, columnName) {
     formattedData.push({ "frequency": frequency, "count":value});
   });
 
-  var svg = dimple.newSvg("#" + columnName, "100%", 271);
+  var svg = dimple.newSvg("#" + columnName, "100%", 350);
   var barChart = new dimple.chart(svg, formattedData);
   var x = barChart.addMeasureAxis("x", "count");
   x.title = "";
