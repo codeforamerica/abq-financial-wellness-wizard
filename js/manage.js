@@ -100,7 +100,7 @@ function getGraphTitle(column) {
 
 function populateLineGraph(data, columnNames) {
   var columnName = columnNames.slice(0, 1);
-  var svg = dimple.newSvg("#" + columnName, 500, 267);
+  var svg = dimple.newSvg("#" + columnName, 700, 425);
   var formattedData = [];
 
   $.each(columnNames, function() {
@@ -139,7 +139,7 @@ function populatePieChart(data, columnName) {
     units: "units",
     m: [0, 0, 0, 0],
     w: 500,
-    h: 267,
+    h: 300,
     div: "#" + columnName
   }
   Sheetsee.d3PieChart(colorArray, options);
@@ -173,7 +173,7 @@ function populateBarGraph(data, columnName) {
     formattedData.push({ "frequency": frequency, "count":value});
   });
 
-  var svg = dimple.newSvg("#" + columnName, "100%", 271);
+  var svg = dimple.newSvg("#" + columnName, "100%", 350);
   var barChart = new dimple.chart(svg, formattedData);
   var x = barChart.addMeasureAxis("x", "count");
   x.title = "";
