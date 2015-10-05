@@ -6,8 +6,31 @@
   <body>
 
     {% include header.html %}
+    <div id='container'>
+      <h1 id="title">Financial Wellness Report</h1>
 
-	{{ content }}
+      {{ content }}
+
+      <section id="overview">
+        <h2>Overview</h2>
+      </section>
+
+      <section id="present-security">
+        <h2>Present Security</h2>
+      </section>
+
+      <section id="future-security">
+        <h2>Future Security</h2>
+      </section>
+
+      <section id="present-freedom">
+        <h2>Present Freedom</h2>
+      </section>
+
+      <section id="future-freedom">
+        <h2>Future Freedom</h2>
+      </section>
+   </div>
 	
 
     {% include footer.html %}

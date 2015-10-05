@@ -6,6 +6,6 @@ $(document).ready(function() {
   });
 
   function showData(spreadsheets, tabletop) {
-    loadData(["MRCOG", "HeadingHome", "CABQ-HR"], spreadsheets, tabletop);
+    loadData(["MRCOG", "HeadingHome", "CABQ-HR"], "Accumulative Data", spreadsheets, tabletop);
   }
  }) //close ready

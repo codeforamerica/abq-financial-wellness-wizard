@@ -6,6 +6,6 @@ $(document).ready(function() {
   });
 
   function showData(spreadsheets, tabletop) {
-    loadData("HeadingHome", spreadsheets, tabletop);
+    loadData("HeadingHome", "Heading Home ABQ", spreadsheets, tabletop);
   }
  }) //close ready
