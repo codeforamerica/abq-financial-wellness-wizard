@@ -6,6 +6,6 @@ $(document).ready(function() {
   });
 
   function showData(spreadsheets, tabletop) {
-    loadData("CABQ-HR", spreadsheets, tabletop);
+    loadData("CABQ-HR", "CABQ HR", spreadsheets, tabletop);
   }
  }) //close ready

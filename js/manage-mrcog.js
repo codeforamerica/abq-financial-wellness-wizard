@@ -6,6 +6,6 @@ $(document).ready(function() {
   });
 
   function showData(spreadsheets, tabletop) {
-    loadData("MRCOG", spreadsheets, tabletop);
+    loadData("MRCOG", "MRCOG", spreadsheets, tabletop);
   }
  }) //close ready
