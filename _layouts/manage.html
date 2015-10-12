@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head-manage.html %}
+  {% include head.html %}
 
   <body>
 
@@ -35,6 +35,8 @@
 
     {% include footer.html %}
 
+    <script src='{{ "/js/tabletop.js" | prepend: site.baseurl }}' type="text/javascript"></script>
+    <script src='{{ "/js/sheetsee.js" | prepend: site.baseurl }}' type="text/javascript"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
     <script src='{{ "/js/manage.js" | prepend: site.baseurl }}' type="text/javascript"></script>
