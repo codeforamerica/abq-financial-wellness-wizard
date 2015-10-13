@@ -242,3 +242,7 @@ textarea {width: 100%;}
 
 .aboutpage i {font-size: 4.0rem;     vertical-align: text-bottom;}
 .aboutpage i, .aboutpage h2 {color: rgb(96,125,139);}
+.aboutpage .row {padding-bottom: 45px;}
+.aboutpage .mdl-card {width: 100%}
+
+.switches label {display: inline; padding: 0px 35px}
