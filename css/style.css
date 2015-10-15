@@ -246,3 +246,8 @@ textarea {width: 100%;}
 .aboutpage .mdl-card {width: 100%}
 
 .switches label {display: inline; padding: 0px 35px}
+
+div .written-response span {font-size: 3rem; font-weight: bold; color: rgb(96, 125, 139)}
+
+div .written-response div {}
+div .written-response {text-align: center; margin: 0 5%;}
