@@ -34,7 +34,9 @@
 	
 
     {% include footer.html %}
-
+    <script src='{{ "/slick/slick.min.js" | prepend: site.baseurl }}' type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ "/slick/slick.css" | prepend: site.baseurl }}" >
+    <link rel="stylesheet" href="{{ "/slick/slick-theme.css" | prepend: site.baseurl }}" >
     <script src='{{ "/js/tabletop.js" | prepend: site.baseurl }}' type="text/javascript"></script>
     <script src='{{ "/js/sheetsee.js" | prepend: site.baseurl }}' type="text/javascript"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
