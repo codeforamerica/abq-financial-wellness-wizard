@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<div id="container">
+  <div class="filters">
+    <label for="present-security" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+      <input type="checkbox" id="present-security" value="present-security" class="mdl-switch__input" checked />
+      <span class="mdl-switch__label">Present Security</span>
+    </label>
+
+    <label for="present-freedom" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+      <input type="checkbox" id="present-freedom" value="present-freedom" class="mdl-switch__input" checked/>
+      <span class="mdl-switch__label">Present Freedom</span>
+    </label>
+
+    <label for="future-security" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+      <input type="checkbox" id="future-security" value="future-security" class="mdl-switch__input" checked/>
+      <span class="mdl-switch__label">Future Security</span>
+    </label>
+
+    <label for="future-freedom" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+      <input type="checkbox" id="future-freedom" value="future-security" class="mdl-switch__input" checked/>
+      <span class="mdl-switch__label">Future Freedom</span>
+    </label>
+  </div>
+
+  <div id="resources">
+  </div>
+</div>
+
+  <script type="text/html" id="resources_template">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="tHeader">Organization</th>
+          <th class="tHeader">Service</th>
+			    <th class="tHeader">URL</th>
+			    <th class="tHeader">Area</th>
+			    <th class="tHeader">Category</th>
+			    <th class="tHeader">Tag</th>
+        </tr>
+      </thead>
+
+      {{ "{{#rows"}} }}
+        <tr>
+          <td>{{ "{{Organization"}} }}</td>
+          <td>{{ "{{Service"}} }}</td>
+          <td><a href="/{{ '{{Link'}} }}" target="_blank">Link</a></td>
+          <td>{{ "{{Area"}} }}</td>
+          <td>{{ "{{Category"}} }}</td>
+          <td>{{ "{{Tag"}} }}</td>
+        </tr>
+      {{ "{{/rows"}} }}
+
+    </table>
+	</script>
+
+  <script src='{{ "/js/tabletop.js" | prepend: site.baseurl }}' type="text/javascript"></script>
+  <script src='{{ "/js/sheetsee.js" | prepend: site.baseurl }}' type="text/javascript"></script>
+ <script src='{{ "/js/resources.js" | prepend: site.baseurl }}' type="text/javascript"></script>
+

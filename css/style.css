@@ -98,7 +98,7 @@ footer p {
 	min-height:800px;
 	padding:100px 10px 10px 10px;
 	margin:0 auto;
-	
+  clear: both;	
 }
 
 tbody tr:nth-child(even) {
@@ -245,9 +245,24 @@ textarea {width: 100%;}
 .aboutpage .row {padding-bottom: 45px;}
 .aboutpage .mdl-card {width: 100%}
 
-.switches label {display: inline; padding: 0px 35px}
+.filters label {
+  display: inline;
+  padding: 0px 35px;
+  font-size: 16px;
+  font-family: "Raleway","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#resources {
+  position: relative;
+}
 
 div .written-response span {font-size: 3rem; font-weight: bold; color: rgb(96, 125, 139)}
 
 div .written-response div {}
+
 div .written-response {text-align: center; margin: 0 5%;}
