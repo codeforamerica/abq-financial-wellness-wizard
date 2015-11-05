@@ -8,6 +8,7 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
   var data = [];
   var sheet;
   var columnNames = [];
+  var png;
 
   $('#title').append(': ' + title);
 
@@ -15,8 +16,10 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
     sheet = tabletop.sheets(sheetName);
     columnNames = sheet.column_names;
     data = sheet.elements;
+    png = sheetName.toLowerCase();
   }
   else {
+    png = 'all-pilot';
     $.each(sheetName, function(index, value) {
       sheet = tabletop.sheets(value);
       columnNames = sheet.column_names;
@@ -46,6 +49,10 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
 
   populateLineGraph(data, presentFreedom);
   populateLineGraph(data, futureFreedom);
+  populateDiamond(png);
+}
+
+function populateDiamond(pngName) {
 }
 
 function containsOverview(element) {
