@@ -17,6 +17,16 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
     columnNames = sheet.column_names;
     data = sheet.elements;
     png = sheetName.toLowerCase();
+
+    var eltToAppendTo = $("#title");
+    var backLink = $('<a/>', {
+      href: "javascript:history.back()"
+    });
+    var backButton = $('<button/>', {
+      class: "button reset-btn  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--raised",
+      text: "Back to your data"
+    }).appendTo(backLink);
+    eltToAppendTo.after(backLink);
   }
   else {
     png = 'all-pilot';
@@ -26,6 +36,10 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
       data = data.concat(sheet.elements);
     });
   }
+
+  var diamondImage = $('#diamond-image');
+  diamondImage.attr("src", "../images/" + png + "-diamond.png");
+  diamondImage.attr("alt", png + "-diamond-chart")
 
   var overview = columnNames.filter(containsOverview);
   var futureSecurity = columnNames.filter(containsFuture);
