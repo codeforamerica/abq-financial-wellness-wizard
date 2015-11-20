@@ -14,7 +14,7 @@ Creating a New Survey
 
 ## Create Google Sheet
 1. In the google spreadsheet, add a new tab.
-1. Name it the name of the business, replacing any spaces with a dash. For example, if the business is 'Two Hours' the tab should be named 'two-hours'. Remove any special characters like '&'.
+1. Name it the name of the business, all caps, replacing any spaces with a dash. For example, if the business is 'Two Hours' the tab should be named 'TWO-HOURS'. Remove any special characters like '&'.
 
 ## Create Zapier Hook
 1. Login to Zapier
