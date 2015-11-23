@@ -8,6 +8,7 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
   var data = [];
   var sheet;
   var columnNames = [];
+  var png;
 
   $('#title').append(': ' + title);
 
@@ -15,14 +16,30 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
     sheet = tabletop.sheets(sheetName);
     columnNames = sheet.column_names;
     data = sheet.elements;
+    png = sheetName.toLowerCase();
+
+    var eltToAppendTo = $("#title");
+    var backLink = $('<a/>', {
+      href: "javascript:history.back()"
+    });
+    var backButton = $('<button/>', {
+      class: "button reset-btn  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--raised",
+      text: "Back to your data"
+    }).appendTo(backLink);
+    eltToAppendTo.after(backLink);
   }
   else {
+    png = 'all-pilot';
     $.each(sheetName, function(index, value) {
       sheet = tabletop.sheets(value);
       columnNames = sheet.column_names;
       data = data.concat(sheet.elements);
     });
   }
+
+  var diamondImage = $('#diamond-image');
+  diamondImage.attr("src", "../images/" + png + "-diamond.png");
+  diamondImage.attr("alt", png + "-diamond-chart")
 
   var overview = columnNames.filter(containsOverview);
   var futureSecurity = columnNames.filter(containsFuture);
@@ -46,6 +63,10 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
 
   populateLineGraph(data, presentFreedom);
   populateLineGraph(data, futureFreedom);
+  populateDiamond(png);
+}
+
+function populateDiamond(pngName) {
 }
 
 function containsOverview(element) {

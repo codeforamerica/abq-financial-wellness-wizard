@@ -1,6 +1,12 @@
 $(document).ready(function() {
+  var formkeepId = getParameterByName('formkeep')
+  if (formkeepId) {
+    var form = $('form');
+    form.attr("action", "https://formkeep.com/f/" + formkeepId);
+  }
+
 	//Featherlight lightbox loads when page loads	
-	$.featherlight("#introLightbox");    
+	$.featherlight("#introLightbox");
 	
 	//Reset button at end of form, reloads and scrolls to top of page
 	$('#reload').click(function() {
@@ -10,8 +16,6 @@ $(document).ready(function() {
 	
 	//button states
 	$('.button').click(function(e) {
-		console.log()
-		// e.preventDefault();
 		$(this).siblings().removeClass('active');
 		$(this).addClass('active');
 		showNextQuestion($(this).attr('id'));
@@ -41,5 +45,13 @@ $(document).ready(function() {
   function scroll(element, parent){
     $(element).animate({ scrollTop: $(element).scrollTop() + $(element).offset().top - $(element).offset().top }, { duration: 'slow', easing: 'swing'});
     $('html,body').animate({ scrollTop: $(element).offset().top - ($(window).height()/3) }, { duration: 1000, easing: 'swing'});
+  }
+
+  // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 }) //close ready
