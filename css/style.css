@@ -7,6 +7,17 @@ body {overflow-x: hidden}
 
 .bold {	font-weight:bold; }
 
+#open-forum-inner {
+  text-align: center;
+  margin: 1% 5%;
+}
+
+#open-forum-inner span{
+  font-size: 3rem;
+  font-weight: bold;
+  color: #607D8B;
+}
+
 .menu {
   float: right;
   padding-top: 16px;
@@ -121,14 +132,6 @@ section {
 section:last-child {
 	
 	border-bottom:0;
-}
-
-.active {
-	
-	background-color:#8698A6;
-	color:white !important;
-	border-color:#8698A6;
-	color: #F1F2B8;
 }
 
 .six {

@@ -63,10 +63,12 @@ function loadData(sheetName, title, spreadsheets, tabletop) {
 
   populateLineGraph(data, presentFreedom);
   populateLineGraph(data, futureFreedom);
-  populateDiamond(png);
-}
-
-function populateDiamond(pngName) {
+  populateOpenForum(data);
+  $('#open-forum-inner').slick({
+    dots: true,
+    infinite: true,
+    speed: 500
+  });
 }
 
 function containsOverview(element) {
@@ -118,6 +120,20 @@ function createRows(sectionName, columnNames) {
 
 function getGraphTitle(column) {
   return graphTitleMapping[column] || column;
+}
+
+function populateOpenForum(data) {
+  var openForumInner = $("#open-forum-inner");
+  var comments = data.map(function(d){ return d.open_forum.trim()}).filter(function(d){ return d!==""});
+
+  $.each(comments, function(i, comment) {
+    var outerDiv = $('<div/>').appendTo(openForumInner);
+    var p = $('<p/>').appendTo(outerDiv);
+    var span = $('<span/>', {
+      text: '"'
+    }).appendTo(p);
+    p.append(comment);
+  });
 }
 
 function populateLineGraph(data, columnNames) {
